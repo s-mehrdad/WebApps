@@ -3,13 +3,13 @@
 /// CSS (modified from old works)
 /// </summary>
 /// <created>ʆϒʅ,13.05.2022</created>
-/// <changed>ʆϒʅ,14.05.2022</changed>
+/// <changed>ʆϒʅ,17.05.2022</changed>
  --------------------------------------------------------------------------------*/
 
 
 @media only screen and (max-width: 1024px) and (max-height: 768px) {
   p {
-    font-family: Verdana,Arial;
+    font-family: 'Segoe UI', Verdana,Arial;
     font-size: inherit;
   }
 }
@@ -17,7 +17,7 @@
 a research on media type before use is advised.*/
 @media only print {
   p {
-    font-family: Verdana,Arial;
+    font-family: 'Segoe UI', Verdana,Arial;
     font-size: inherit;
     color: black;
   }
@@ -26,11 +26,18 @@ a research on media type before use is advised.*/
 
 body {
   margin: 10%;
+  font-family: 'Segoe UI Regular';
+}
+
+
+header {
+  overflow: hidden;
 }
 
 
 a {
   text-align: left;
+  text-decoration: none;
 }
   /*element selector usage*/
 
@@ -44,32 +51,153 @@ a {
   }
 
 .link_class {
-  background-color: forestgreen;
+  display: block;
+  max-height: 40px;
+  overflow: hidden;
 }
 /*class selector usage*/
 
 a.link_class:hover {
   text-align: left;
-  font-size: 25px;
+  font-size: 30px;
   color: sandybrown;
+  transition-duration: 2s;
+}
+
+
+h1 {
+  overflow: hidden;
 }
 
 
 p {
   text-align: left;
   font-size: 18px;
-  background-color: skyblue;
+  background-color: #edededd6;
+  padding: 10px;
 }
 
 
 nav {
 }
 
+
+ul.menu_nav {
+  list-style: none;
+  background-color: #141a1de1;
+  height: 35px;
+  width: auto;
+  overflow: hidden;
+  padding: 5px;
+}
+
+  ul.menu_nav > li {
+    display: block;
+    float: left;
+    padding: 5px;
+  }
+
+    ul.menu_nav > li > a {
+      float: left;
+      height: 20px;
+      color: #ffffffb9;
+    }
+
+
+#menu_one > li > a:hover::after, #menu_one > li > a:focus::after {
+  content: '';
+  display: block;
+  left: 50%;
+  border-top: 10px dotted forestgreen;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-radius: 10px;
+}
+
+
+#menu_two > li > a:hover ~ span, #menu_two > li > a:focus ~ span {
+  display: block;
+  position: relative;
+  left: 10px;
+  top: 20px;
+  background-color: red;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  transform: scaleX(3);
+  transition: 0.3s cubic-bezier(.5,.5,.5,.5);
+}
+
+
+ul {
+  list-style: none;
+}
+
+
 aside {
   float: left;
-  height: 500px;
-  padding: 30px;
-  background-color: blueviolet;
+  padding: 0px;
+  margin: 10px;
+}
+
+ul.menu_side {
+  display: none;
+  background-color: #0a0e10f7;
+  height: 0px;
+  width: auto;
+  /*overflow: hidden;*/
+  padding: 0px;
+}
+
+  ul.menu_side > li {
+    padding: 5px;
+  }
+
+    ul.menu_side > li > a {
+      height: 20px;
+      color: #ffffffb9;
+    }
+
+
+input[type="checkbox"] {
+  /*display: none;*/
+}
+
+
+#menu_three span {
+  display: flex;
+  position: relative;
+  background: red;
+  height: 2px;
+  width: 20px;
+  border-radius: 5px;
+  margin: 2px;
+  cursor: pointer;
+}
+
+
+/*#menu_three span:nth-child(1) {
+    height: 50%;
+  }*/
+
+
+/*#menu_three input:checked ~ span {*/
+#menu_three input[type="checkbox"]:hover ~ span {
+  width: 50px;
+  transition-duration: 2s;
+}
+
+
+#menu_three input:checked ~ ul.menu_side {
+  display: block;
+  height: 600px;
+  transition-property: all;
+}
+
+
+#menu_three li > a:hover, #menu_three li > a:focus {
+  color: red;
+  transition-duration: 1s;
 }
 
 
@@ -79,3 +207,12 @@ aside {
 }
 /*id selector usage*/
 
+
+section {
+  padding: 10px;
+}
+
+
+article {
+  padding: 10px;
+}

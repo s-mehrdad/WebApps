@@ -34,6 +34,7 @@ I appreciate any contribution to the project.
 
 <tr>
 <td><a href="https://www.w3schools.com/">W3Schools</a></td>
+<td><a href="https://freefrontend.com/">Free Fronted</a></td>
 </tr>
 
 </table>

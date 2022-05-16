@@ -3,7 +3,7 @@
 /// HTML (modified from old works)
 /// </summary>
 /// <created>ʆϒʅ,13.05.2022</created>
-/// <changed>ʆϒʅ,14.05.2022</changed>
+/// <changed>ʆϒʅ,17.05.2022</changed>
  -------------------------------------------------------------------------------- -->
 
 
@@ -45,7 +45,7 @@
 
 </head>
 
-<body style="background-color:#70c2fad4">
+<body style="background-color:#ffffffff">
   <!--in-line style sheet (highest priority and over-ridable by !important;)-->
 
 
@@ -57,14 +57,40 @@
   </header>
 
 
-  <nav><p>List of links</p></nav>
+  <nav>
+    <ul id="menu_one" class="menu_nav">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Link to page One</a></li>
+      <li><a href="#">link to page Two</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+
+    <ul id="menu_two" class="menu_nav">
+      <li><a href="#">Link to home page</a><span></span></li>
+      <li><a href="#">Link two</a><span></span></li>
+      <li><a href="#">Link three</a><span></span></li>
+      <li><a href="#">Link fourLink fourLink four</a><span></span></li>
+    </ul>
+  </nav>
 
 
   <aside>
-    <p>link 1</p>
-    <p>link 2</p>
-    <p>link 3</p>
-  </aside>
+    <div id="menu_three">
+      <label>
+        <input type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <ul class="menu_side">
+        <li><a href="#">section One</a></li>
+        <li><a href="#">section Two</a></li>
+        <li><a href="#">section Three</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+    </div>
+  </aside> <br />
 
 
   <section>
