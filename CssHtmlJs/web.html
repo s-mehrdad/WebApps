@@ -3,7 +3,7 @@
 /// HTML (modified from old works)
 /// </summary>
 /// <created>ʆϒʅ,13.05.2022</created>
-/// <changed>ʆϒʅ,17.05.2022</changed>
+/// <changed>ʆϒʅ,21.05.2022</changed>
  -------------------------------------------------------------------------------- -->
 
 
@@ -17,16 +17,26 @@
 
   <base href="" target="_self" />
 
-  <!--[if IE]>
+  <!--[if IE --]>
       <link href="#" rel="stylesheet" />
+      ... more HTML ...
       <![endif]-->
+  <!--note: above is a conditional comment-->
 
   <link rel="stylesheet" type="text/css" href="web.css" />
   <!--external style sheet (lowest priority)
+      if placed after internal, will override its priority.
       link tag to connect to external resource-->
 
   <script src="web.js"></script>
   <!--link to external JavaScript-->
+
+  <script>
+  <!--
+    function msg() { alert{ "WebApps!" } } // JS comment
+    -->
+  </script>
+  <!--Note: confronting old browsers: above script will be commented out.-->
 
   <style type="text/css">
     body {
@@ -46,37 +56,53 @@
 </head>
 
 <body style="background-color:#ffffffff">
-  <!--in-line style sheet (highest priority and over-ridable by !important;)-->
+  <!--in-line style sheet (highest priority and over-ridable by !important;)
+      note: not a good practice, best practice is higher CSS specificity or equal one later in code.-->
 
 
   <header>
     <h1 title="contain brief notes in source code">A brief use of HTML, CSS, JavaScript</h1>
     <!--titles contain the tool tips-->
-    <a class="link_class" href="https://www.w3schools.com/">Link to Web development references</a>
+    <a class="link-class" href="https://www.w3schools.com/" target="_blank">Link to Web development references</a>
     <!--if an address contains " use '-->
   </header>
 
 
   <nav>
-    <ul id="menu_one" class="menu_nav">
+    <ul id="menu-one" class="menu-nav">
       <li><a href="#">Home</a></li>
       <li><a href="#">Link to page One</a></li>
       <li><a href="#">link to page Two</a></li>
-      <li><a href="#">Contact</a></li>
+      <li>
+        <a href="mailto:email@mail.com?cc=email@mail.com&bcc=email@mail.com&subject=WebApps&body=A%20MESSAGE%20TO%20YOU"
+           target="_top">Contact</a><!--%20 is for the paces between words-->
+      </li>
     </ul>
 
-    <ul id="menu_two" class="menu_nav">
-      <li><a href="#">Link to home page</a><span></span></li>
-      <li><a href="#">Link two</a><span></span></li>
-      <li><a href="#">Link three</a><span></span></li>
-      <li><a href="#">Link fourLink fourLink four</a><span></span></li>
+    <ul id="menu-two" class="menu-nav">
+      <li><a href="#">Link One</a><span></span></li>
+      <li class="has-sub">
+        <a href="#">Link Two</a><span></span>
+        <ul>
+          <li class="has-sub">
+            <a href="#">Sub One</a><span></span>
+            <ul>
+              <li><a href="#">One</a><span></span></li>
+              <li><a href="#">Two</a><span></span></li>
+            </ul>
+          </li>
+          <li><a href="#">Sub Two</a><span></span></li>
+        </ul>
+      </li>
+      <li><a href="#">Link Three</a><span></span></li>
+      <li><a href="#">Link Four</a><span></span></li>
     </ul>
   </nav>
 
 
   <aside>
-    <div id="menu_three">
-      <label tabindex="1" class="checkbox_nest">
+    <div id="menu-three">
+      <label tabindex="1" class="checkbox-nest">
         <input type="checkbox" />
         <span></span>
         <span></span>
@@ -84,10 +110,11 @@
         <span></span>
         <span></span>
         <span></span>
-        <label class="menu_side">
-          <a href="#">section One</a><br />
-          <a href="#">section Two</a><br />
-          <a href="#">section Three</a><br />
+        <label class="menu-side">
+          <a href="#first-section">section One</a><br />
+          <a href="#second-section">section Two</a><br />
+          <a href="#third-section">section Three</a><br />
+          <a href="#forth-section">section Forth</a><br />
           <a href="#">Login</a>
         </label>
       </label>
@@ -95,28 +122,145 @@
   </aside> <br />
 
 
-  <section>
+  <section id="first-section">
     <p>First Section</p>
   </section>
 
 
-  <article>
-    <p id="paragraph_id">
+  <article class="clear, id-usage">
+    <p>
       If <b>there (bold tag)</b> raises<br />
       a <em>need (emphasize tag)</em><br />,
       this <i>document (italic tag)</i><br />
       <code>contain (code tag)</code><br />
       brief <strong>notes (strong tag)</strong><br />
       in <sub>source (subscript tag)</sub><br />
-      code <sup>and (superscript tag)</sup> comments!
+      code <sup>and (superscript tag)</sup><br />
+      comments as <small>documentation! (small tag)</small>
     </p>
   </article>
 
 
-  <summury><p>summary</p></summury>
+  <details><p>details</p></details>
+
+
+  <section id="second-section">
+    <p>Second Section</p>
+  </section>
+
+
+  <article class="table-face">
+    <table>
+      <caption>table's face</caption>
+      <colgroup>
+        <col span="1" class="column-face" />
+        <col span="2" />
+      </colgroup>
+      <!--columns are grouped for formatting and its tag precedes table's header-->
+      <thead>
+        <!--table header section-->
+        <tr>
+          <th colspan="3">this is a horizontal header</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!--body of table-->
+        <tr>
+          <td>insert tag</td>
+          <td colspan="2"><ins>the tag's usage</ins></td>
+        </tr>
+        <tr>
+          <td>deleted tag</td>
+          <td colspan="2"><del>the tag's usage</del></td>
+        </tr>
+        <tr>
+          <td>marked tag</td>
+          <td colspan="2"><mark>the tag's usage</mark></td>
+        </tr>
+        <tr>
+          <td>keyboard tag</td>
+          <td colspan="2"><kbd>the tag's usage</kbd></td>
+        </tr>
+        <tr>
+          <td>sample code tag</td>
+          <td colspan="2"><smp>the tag's usage</smp></td>
+        </tr>
+        <tr>
+          <td>variable tag</td>
+          <td colspan="2"><var>the tag's usage</var></td>
+        </tr>
+        <tr>
+          <td>pre-formatted tag</td>
+          <td colspan="2"><pre>the tag's usage</pre></td>
+        </tr>
+        <tr>
+          <td>abbreviation tag</td>
+          <td colspan="2"><abbr>the tag's usage</abbr></td>
+        </tr>
+        <tr>
+          <td>address tag</td>
+          <td colspan="2"><address>the tag's usage</address></td>
+        </tr>
+        <tr>
+          <td>text direction tag</td>
+          <td colspan="2"><bdo>the tag's usage</bdo></td>
+        </tr>
+        <tr>
+          <td>block quote tag</td>
+          <td colspan="2"><blockquote>the tag's usage</blockquote></td>
+        </tr>
+        <tr>
+          <td>short quotation tag</td>
+          <td colspan="2"><q>the tag's usage</q></td>
+        </tr>
+        <tr>
+          <td>work title tag</td>
+          <td colspan="2"><cite>the tag's usage</cite></td>
+        </tr>
+        <tr>
+          <td>definition term tag</td>
+          <td colspan="2"><dfn>the tag's usage</dfn></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <!--table footer divider-->
+        <tr>
+          <td colspan="3">three for table's' footer</td>
+        </tr>
+      </tfoot>
+    </table>
+    <!--Note: when printing large tables, table's sections provide header and footer on all pages.-->
+  </article>
 
 
   <details><p>details</p></details>
+
+
+  <section id="third-section">
+    <p>Third Section</p>
+  </section>
+
+
+  <article>
+  </article>
+
+
+  <details><p>details</p></details>
+
+
+  <section id="forth-section">
+    <p>Forth Section</p>
+  </section>
+
+
+  <article>
+  </article>
+
+
+  <details><p>details</p></details>
+
+
+  <summury><p>Web Apps are fun and made interesting!</p></summury>
 
 
   <footer><p>here comes the footer</p></footer>

@@ -3,13 +3,14 @@
 /// CSS (modified from old works)
 /// </summary>
 /// <created>ʆϒʅ,13.05.2022</created>
-/// <changed>ʆϒʅ,17.05.2022</changed>
+/// <changed>ʆϒʅ,21.05.2022</changed>
  --------------------------------------------------------------------------------*/
 
 
 @media only screen and (max-width: 1024px) and (max-height: 768px) {
   p {
-    font-family: 'Segoe UI', Verdana,Arial;
+    font-family: 'Segoe UI', Verdana, Arial;
+    /*fallback system starts at wished font and end with a generic font family*/
     font-size: inherit;
   }
 }
@@ -25,9 +26,11 @@ a research on media type before use is advised.*/
 
 
 body {
-  margin: 10%;
+  margin: 5%;
+  padding: 5%;
   font-family: 'Segoe UI Regular';
 }
+/*Note: Cross browsers: predefined margin and padding to avoid visual differences*/
 
 
 header {
@@ -46,23 +49,29 @@ a {
   /*a custom identifier for selectors never starts with numbers*/
 
 
-  a.link_class {
-    font-size: 20px;
+  a.link-class {
+    font-size: 1.2em;
+    /*em size unit is recommended by W3C, encouraging pixels/16=em formula*/
+    font-style: oblique;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    color: #8000FF
   }
 
-.link_class {
+.link-class {
   display: block;
   max-height: 40px;
   overflow: hidden;
 }
 /*class selector usage*/
 
-a.link_class:hover, a.link_class:active {
+a.link-class:hover, a.link-class:active {
   text-align: left;
   font-size: 30px;
   color: sandybrown;
   transition-duration: 2s;
 }
+/*pseudo classes usage*/
 
 
 h1 {
@@ -73,59 +82,133 @@ h1 {
 p {
   text-align: left;
   font-size: 18px;
-  background-color: #edededd6;
+  background-color: #d8d8d8;
   padding: 10px;
 }
+
+
+/*more CSS selectors: CSS Combinators*/
+div p {
+  background-color: blue;
+}
+/*CSS descendant: select all <p> elements inside of*/
+div ~ p {
+  background-color: blueviolet;
+}
+/*CSS general sibling: select all <p> siblings of*/
+div > p {
+  background-color: brown;
+}
+/*CSS child selector: select all <p> elements that are immediate children of*/
+div + p {
+  background-color: firebrick;
+}
+/*CSS adjacent sibling: select all <p> placed immediately after of*/
 
 
 nav {
 }
 
 
-ul.menu_nav {
+ul.menu-nav, ul.menu-nav ul {
   list-style: none;
-  background-color: #141a1de1;
-  height: 35px;
+  display: flex;
+  background-color: #141a1d;
+  height: auto;
   width: auto;
-  overflow: hidden;
   padding: 5px;
+  border-bottom: 5px solid #007bff;
 }
 
-  ul.menu_nav > li {
-    display: block;
-    float: left;
-    padding: 5px;
+  ul.menu-nav li {
+    float: left; /*float list items next to each other*/
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 20px;
+    min-width: fit-content;
+    /*overflow: hidden;*/
+    padding-bottom: 10px;
+    border-radius: 10px;
   }
 
-    ul.menu_nav > li > a {
-      float: left;
+    ul.menu-nav li a {
       height: 20px;
-      color: #ffffffb9;
+      display: block; /*whole link area click-able*/
+      color: #ffffff;
     }
 
+  ul.menu-nav .has-sub ul {
+    position: relative;
+    top: 10px;
+    display: none;
+  }
 
-#menu_one > li > a:hover::after, #menu_one > li > a:focus::after {
+  ul.menu-nav .has-sub li {
+    float: initial;
+  }
+
+  ul.menu-nav .has-sub ul .has-sub ul {
+    position: absolute;
+    top: 0px;
+    left: 150px;
+    display: none;
+  }
+
+  ul.menu-nav .has-sub ul .has-sub li {
+    float: left;
+    width: fit-content;
+  }
+
+
+#menu-one > li > a:hover::after, #menu-one > li > a:focus::after {
   content: '';
-  display: block;
+  display: block; /*adjustable as blocks*/
   left: 50%;
-  border-top: 10px dotted forestgreen;
+  border-top: 10px dotted forestgreen; /*shorthand property usage*/
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
   border-radius: 10px;
 }
 
 
-#menu_two > li > a:hover ~ span, #menu_two > li > a:focus ~ span {
+#menu-two a {
+  width: 150px;
+}
+
+
+#menu-two > li:hover {
+  border-right: 5px solid #007bff;
+}
+
+#menu-two .has-sub:hover ul {
+  display: block;
+}
+
+  #menu-two .has-sub:hover ul .has-sub ul {
+    display: none;
+  }
+
+#menu-two .has-sub ul .has-sub:hover ul {
+  display: flex;
+}
+
+
+#menu-two .has-sub:hover ~ a {
+  display: block;
+}
+
+
+#menu-two > li > a:hover ~ span, #menu-two > li > a:focus ~ span {
   display: block;
   position: relative;
   left: 10px;
-  top: 20px;
+  top: 10px;
   background-color: red;
   width: 10px;
   height: 10px;
   border-radius: 10px;
   transform: scaleX(3);
-  transition: 0.3s cubic-bezier(.5,.5,.5,.5);
+  transition: 0.3s cubic-bezier(.3,.2,.5,.8);
 }
 
 
@@ -137,9 +220,10 @@ aside {
   margin-right: 20px;
 }
 
-label.menu_side {
+label.menu-side {
   display: none;
-  background-color: #0a0e10f7;
+  /*float: left;*/ /*arrange one after another and same size*/
+  background-color: #0a0e10;
   height: 0px;
   width: auto;
   overflow: hidden;
@@ -147,19 +231,19 @@ label.menu_side {
   cursor: pointer;
 }
 
-  label.menu_side > a {
+  label.menu-side > a {
     padding: 5px;
     height: 20px;
-    color: #ffffffb9;
+    color: #ffffff;
   }
 
 
-#menu_three input {
+#menu-three input {
   display: none;
 }
 
 
-#menu_three span {
+#menu-three span {
   display: block;
   background: red;
   height: 8px;
@@ -168,7 +252,7 @@ label.menu_side {
   margin: 6px;
 }
 
-  #menu_three span:nth-child(2) {
+  #menu-three span:nth-child(2) {
     height: 10px;
     width: 10px;
     border-right-width: 20px;
@@ -178,66 +262,63 @@ label.menu_side {
   }
 
 
-#menu_three input:hover ~ span {
+/*#menu-three input:hover ~ span {
   width: 45px;
   transition-duration: 2s;
 }
 
-  #menu_three input:hover ~ span:nth-child(6) {
+  #menu-three input:hover ~ span:nth-child(6) {
     width: 35px;
     transition-duration: 2s;
   }
 
-  #menu_three input:hover ~ span:nth-child(7) {
+  #menu-three input:hover ~ span:nth-child(7) {
     width: 35px;
     transition-duration: 2s;
   }
 
-  #menu_three input:hover ~ span:nth-child(2) {
+  #menu-three input:hover ~ span:nth-child(2) {
     width: 5px;
     height: 10px;
     transform: translate(70px,70px);
     transition-duration: 2s;
-  }
+  }*/
 
 
-#menu_three input:checked ~ span {
+#menu-three input:checked ~ span {
   width: 45px;
+  transition-duration: 2s;
 }
 
-  #menu_three input:checked ~ span:nth-child(6) {
+  #menu-three input:checked ~ span:nth-child(6) {
     width: 35px;
+    transition-duration: 2s;
   }
 
-  #menu_three input:checked ~ span:nth-child(7) {
+  #menu-three input:checked ~ span:nth-child(7) {
     width: 35px;
+    transition-duration: 2s;
   }
 
-  #menu_three input:checked ~ span:nth-child(2) {
+  #menu-three input:checked ~ span:nth-child(2) {
     width: 5px;
     height: 10px;
     transform: translate(70px,70px);
+    transition-duration: 2s;
   }
 
 
-#menu_three input:checked ~ label.menu_side {
-  display: block;
+#menu-three input:checked ~ label.menu-side {
+  display: inline; /*arrange one after another and different size*/
   height: 400px;
   transition-property: all;
 }
 
 
-#menu_three a:hover, #menu_three a:focus {
+#menu-three a:hover, #menu-three a:focus {
   color: red;
   transition-duration: 1s;
 }
-
-
-#paragraph_id {
-  font-size: 3.0em;
-  color: red;
-}
-/*id selector usage*/
 
 
 section {
@@ -248,4 +329,56 @@ section {
 
 article {
   padding: 10px;
+}
+
+
+#first-section p:first-letter {
+  float: left;
+  font-size: 50px;
+  color: red;
+  line-height: 80%;
+  text-decoration: underline;
+  letter-spacing: 5px;
+}
+
+
+.clear {
+  clear: both;
+}
+/*float affects the latter elements so clearance after float usage*/
+
+
+.id-usage {
+  font-size: 2em;
+  color: red;
+}
+/*id selector usage*/
+
+
+table, caption, th, td {
+  text-align: left;
+  border: 2px solid #2faafd;
+  border-collapse: collapse;
+  padding: 2px;
+  font-size: 18px;
+}
+
+thead {
+  background-color: burlywood;
+}
+
+tbody {
+  border-style: dashed;
+}
+
+tfoot {
+  background-color: cornflowerblue;
+}
+
+.table-face {
+}
+
+
+.column-face {
+  background-color: antiquewhite;
 }
