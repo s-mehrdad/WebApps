@@ -3,7 +3,7 @@
 /// CSS (modified from old works)
 /// </summary>
 /// <created>ʆϒʅ,13.05.2022</created>
-/// <changed>ʆϒʅ,21.05.2022</changed>
+/// <changed>ʆϒʅ,22.05.2022</changed>
  --------------------------------------------------------------------------------*/
 
 
@@ -40,6 +40,7 @@ header {
 
 a {
   text-align: left;
+  -webkit-text-decoration: none;
   text-decoration: none;
 }
   /*element selector usage*/
@@ -112,51 +113,52 @@ nav {
 
 ul.menu-nav, ul.menu-nav ul {
   list-style: none;
-  display: flex;
+  display: block;
   background-color: #141a1d;
-  height: auto;
-  width: auto;
+  height: 40px;
+  overflow: hidden;
   padding: 5px;
   border-bottom: 5px solid #007bff;
+  clear: both;
 }
 
   ul.menu-nav li {
     float: left; /*float list items next to each other*/
-    padding-left: 10px;
-    padding-right: 10px;
-    height: 20px;
-    min-width: fit-content;
-    /*overflow: hidden;*/
-    padding-bottom: 10px;
+    height: 30px;
+    width: auto;
+    padding: 5px 10px 5px 10px;
     border-radius: 10px;
   }
 
     ul.menu-nav li a {
       height: 20px;
       display: block; /*whole link area click-able*/
-      color: #ffffff;
+      color: mediumspringgreen;
     }
 
   ul.menu-nav .has-sub ul {
-    position: relative;
-    top: 10px;
+    position: absolute;
+    height: 80px;
+    width: 220px;
+    top: 320px;
     display: none;
   }
 
   ul.menu-nav .has-sub li {
-    float: initial;
+    float: none;
   }
 
   ul.menu-nav .has-sub ul .has-sub ul {
-    position: absolute;
-    top: 0px;
-    left: 150px;
+    position: relative;
+    height: 40px;
+    top: -20px;
+    left: 80px;
     display: none;
+    border: 0px;
   }
 
   ul.menu-nav .has-sub ul .has-sub li {
     float: left;
-    width: fit-content;
   }
 
 
@@ -171,17 +173,15 @@ ul.menu-nav, ul.menu-nav ul {
 }
 
 
-#menu-two a {
-  width: 150px;
-}
-
-
 #menu-two > li:hover {
   border-right: 5px solid #007bff;
+  text-shadow: 1px 2px 2px red;
 }
 
 #menu-two .has-sub:hover ul {
   display: block;
+  text-shadow: 1px 3px 3px gray;
+  /*clear: both;*/
 }
 
   #menu-two .has-sub:hover ul .has-sub ul {
@@ -189,12 +189,8 @@ ul.menu-nav, ul.menu-nav ul {
   }
 
 #menu-two .has-sub ul .has-sub:hover ul {
-  display: flex;
-}
-
-
-#menu-two .has-sub:hover ~ a {
   display: block;
+  /*clear: both;*/
 }
 
 
@@ -202,7 +198,6 @@ ul.menu-nav, ul.menu-nav ul {
   display: block;
   position: relative;
   left: 10px;
-  top: 10px;
   background-color: red;
   width: 10px;
   height: 10px;
@@ -223,7 +218,7 @@ aside {
 label.menu-side {
   display: none;
   /*float: left;*/ /*arrange one after another and same size*/
-  background-color: #0a0e10;
+  background-color: #1063DF;
   height: 0px;
   width: auto;
   overflow: hidden;
@@ -337,6 +332,7 @@ article {
   font-size: 50px;
   color: red;
   line-height: 80%;
+  -webkit-text-decoration: underline;
   text-decoration: underline;
   letter-spacing: 5px;
 }
@@ -381,4 +377,27 @@ tfoot {
 
 .column-face {
   background-color: antiquewhite;
+}
+
+
+footer {
+  text-align: center;
+  align-content: center;
+}
+
+  footer > div {
+    padding-top: 10px;
+  }
+
+svg {
+  height: 100px;
+  width: 430px;
+  overflow: visible;
+}
+
+ellipse {
+  stroke: #007bff;
+  fill: azure;
+  fill-opacity: 0.5;
+  stroke-width: 2px;
 }
