@@ -3,14 +3,14 @@
 /// HTML (modified from old works)
 /// </summary>
 /// <created>ʆϒʅ,13.05.2022</created>
-/// <changed>ʆϒʅ,22.05.2022</changed>
+/// <changed>ʆϒʅ,29.05.2022</changed>
  -------------------------------------------------------------------------------- -->
 
 
 <!DOCTYPE html>
 <!--Declaration-->
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
   <title>Web</title>
@@ -63,7 +63,7 @@
     -->
 
 
-<body style="background-color:#ffffffff">
+<body style="background-color:#ffffffff" onscroll="scroll()">
   <!--in-line style sheet (highest priority and over-ridable by !important;)
       note: not a good practice, best practice is higher CSS specificity or equal one later in code.-->
 
@@ -136,157 +136,182 @@
         </label>
       </label>
     </div>
-  </aside> <br />
+  </aside>
 
 
-  <section id="first-section">
-    <!--thematic headings to group content-->
-    <p>First Section</p>
-  </section>
+  <div class="content">
+
+    <div id="interact">
+
+      <div>
+        <a href="#">
+          <section id="first-section">
+            <!--thematic headings to group content-->
+            Text tags
+          </section>
+        </a>
+        <label id="moreItems">
+          <input type="checkbox" value="check" />
+          <span></span><span></span><span></span><span></span>
+        </label>
+
+        <article>
+          <!--self contained contents like posts-->
+          <p>
+            If <b>there (bold tag)</b> raises
+            a <em>need (emphasize tag)</em>
+            this <i>document (italic tag)</i>
+            <code>contain (code tag)</code>
+            brief <strong>notes (strong tag)</strong>
+            in <sub>source (subscript tag)</sub>
+            code <sup>and (superscript tag)</sup>
+            comments as <small>documentation! (small tag)</small>
+          </p>
+          <p id="JavaScript">
+            This is to be changed!
+            <input type="button" name="styleButton" onclick="changeStyle()" value="Click me!" />
+          </p>
+        </article>
+        <details><p>details</p></details>
+      </div>
+
+      <div>
+        <a href="#">
+          <section id="second-section">
+            Table of tags
+          </section>
+        </a>
+        <label id="moreItems">
+          <input type="checkbox" value="check" />
+          <span></span><span></span><span></span><span></span>
+        </label>
+
+        <article class="table-face">
+          <table>
+            <caption>table's face</caption>
+            <colgroup>
+              <col span="1" class="column-face" />
+              <col span="2" />
+            </colgroup>
+            <!--columns are grouped for formatting and its tag precedes table's header-->
+            <thead>
+              <!--table header section-->
+              <tr>
+                <th colspan="3">this is a horizontal header</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!--body of table-->
+              <tr>
+                <td>insert tag</td>
+                <td colspan="2"><ins>the tag's usage</ins></td>
+              </tr>
+              <tr>
+                <td>deleted tag</td>
+                <td colspan="2"><del>the tag's usage</del></td>
+              </tr>
+              <tr>
+                <td>marked tag</td>
+                <td colspan="2"><mark>the tag's usage</mark></td>
+              </tr>
+              <tr>
+                <td>keyboard tag</td>
+                <td colspan="2"><kbd>the tag's usage</kbd></td>
+              </tr>
+              <tr>
+                <td>sample code tag</td>
+                <td colspan="2"><smp>the tag's usage</smp></td>
+              </tr>
+              <tr>
+                <td>variable tag</td>
+                <td colspan="2"><var>the tag's usage</var></td>
+              </tr>
+              <tr>
+                <td>pre-formatted tag</td>
+                <td colspan="2"><pre>the tag's usage</pre></td>
+              </tr>
+              <tr>
+                <td>abbreviation tag</td>
+                <td colspan="2"><abbr>the tag's usage</abbr></td>
+              </tr>
+              <tr>
+                <td>address tag</td>
+                <td colspan="2"><address>the tag's usage</address></td>
+              </tr>
+              <tr>
+                <td>text direction tag</td>
+                <td colspan="2"><bdo>the tag's usage</bdo></td>
+              </tr>
+              <tr>
+                <td>block quote tag</td>
+                <td colspan="2"><blockquote>the tag's usage</blockquote></td>
+              </tr>
+              <tr>
+                <td>short quotation tag</td>
+                <td colspan="2"><q>the tag's usage</q></td>
+              </tr>
+              <tr>
+                <td>work title tag</td>
+                <td colspan="2"><cite>the tag's usage</cite></td>
+              </tr>
+              <tr>
+                <td>definition term tag</td>
+                <td colspan="2"><dfn>the tag's usage</dfn></td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <!--table footer divider-->
+              <tr>
+                <td colspan="3">three for table's' footer</td>
+              </tr>
+            </tfoot>
+          </table>
+          <!--Note: when printing large tables, table's sections provide header and footer on all pages.-->
+        </article>
+        <details><p>details</p></details>
+      </div>
+
+      <div>
+        <a href="#">
+          <section id="third-section">
+            Interact: swipe, read and delete
+          </section>
+          <article>
+            Here comes some text to be tested...
+          </article>
+          <details><p>details</p></details>
+        </a>
+
+        <label id="moreItems">
+          <input type="checkbox" value="check" />
+          <span></span><span></span><span></span><span></span>
+        </label>
+      </div>
+
+      <div>
+        <a href="#">
+          <section id="forth-section">
+            Forth Section
+          </section>
+        </a>
+        <label id="moreItems">
+          <input type="checkbox" value="check" />
+          <span></span><span></span><span></span><span></span>
+        </label>
+
+        <article>
+        </article>
+        <details><p>details</p></details>
+      </div>
+
+    </div>
+
+    <summury><p>Web Apps are fun and interesting!</p></summury>
 
 
-  <article class="clear, id-usage">
-    <!--self contained contents like posts-->
-    <p>
-      If <b>there (bold tag)</b> raises<br />
-      a <em>need (emphasize tag)</em><br />,
-      this <i>document (italic tag)</i><br />
-      <code>contain (code tag)</code><br />
-      brief <strong>notes (strong tag)</strong><br />
-      in <sub>source (subscript tag)</sub><br />
-      code <sup>and (superscript tag)</sup><br />
-      comments as <small>documentation! (small tag)</small>
-    </p>
-    <p id="JavaScript">
-      This is to be changed!
-      <input type="button" name="JobButton" onclick="getJobDone()" value="Click me!" />
-    </p>
-  </article>
+    <h2>--------Some other Header--------</h2>
 
-
-  <details><p>details</p></details>
-
-
-  <section id="second-section">
-    <p>Second Section</p>
-  </section>
-
-
-  <article class="table-face">
-    <table>
-      <caption>table's face</caption>
-      <colgroup>
-        <col span="1" class="column-face" />
-        <col span="2" />
-      </colgroup>
-      <!--columns are grouped for formatting and its tag precedes table's header-->
-      <thead>
-        <!--table header section-->
-        <tr>
-          <th colspan="3">this is a horizontal header</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!--body of table-->
-        <tr>
-          <td>insert tag</td>
-          <td colspan="2"><ins>the tag's usage</ins></td>
-        </tr>
-        <tr>
-          <td>deleted tag</td>
-          <td colspan="2"><del>the tag's usage</del></td>
-        </tr>
-        <tr>
-          <td>marked tag</td>
-          <td colspan="2"><mark>the tag's usage</mark></td>
-        </tr>
-        <tr>
-          <td>keyboard tag</td>
-          <td colspan="2"><kbd>the tag's usage</kbd></td>
-        </tr>
-        <tr>
-          <td>sample code tag</td>
-          <td colspan="2"><smp>the tag's usage</smp></td>
-        </tr>
-        <tr>
-          <td>variable tag</td>
-          <td colspan="2"><var>the tag's usage</var></td>
-        </tr>
-        <tr>
-          <td>pre-formatted tag</td>
-          <td colspan="2"><pre>the tag's usage</pre></td>
-        </tr>
-        <tr>
-          <td>abbreviation tag</td>
-          <td colspan="2"><abbr>the tag's usage</abbr></td>
-        </tr>
-        <tr>
-          <td>address tag</td>
-          <td colspan="2"><address>the tag's usage</address></td>
-        </tr>
-        <tr>
-          <td>text direction tag</td>
-          <td colspan="2"><bdo>the tag's usage</bdo></td>
-        </tr>
-        <tr>
-          <td>block quote tag</td>
-          <td colspan="2"><blockquote>the tag's usage</blockquote></td>
-        </tr>
-        <tr>
-          <td>short quotation tag</td>
-          <td colspan="2"><q>the tag's usage</q></td>
-        </tr>
-        <tr>
-          <td>work title tag</td>
-          <td colspan="2"><cite>the tag's usage</cite></td>
-        </tr>
-        <tr>
-          <td>definition term tag</td>
-          <td colspan="2"><dfn>the tag's usage</dfn></td>
-        </tr>
-      </tbody>
-      <tfoot>
-        <!--table footer divider-->
-        <tr>
-          <td colspan="3">three for table's' footer</td>
-        </tr>
-      </tfoot>
-    </table>
-    <!--Note: when printing large tables, table's sections provide header and footer on all pages.-->
-  </article>
-
-
-  <details><p>details</p></details>
-
-
-  <section id="third-section">
-    <p>Third Section</p>
-  </section>
-
-
-  <article>
-  </article>
-
-
-  <details><p>details</p></details>
-
-
-  <section id="forth-section">
-    <p>Forth Section</p>
-  </section>
-
-
-  <article>
-  </article>
-
-
-  <details><p>details</p></details>
-
-
-  <summury><p>Web Apps are fun and made interesting!</p></summury>
-
-
-  <h2>--------The second header--------</h2>
+  </div>
 
 
   <footer>

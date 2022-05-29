@@ -3,7 +3,7 @@
 /// CSS (modified from old works)
 /// </summary>
 /// <created>ʆϒʅ,13.05.2022</created>
-/// <changed>ʆϒʅ,22.05.2022</changed>
+/// <changed>ʆϒʅ,29.05.2022</changed>
  --------------------------------------------------------------------------------*/
 
 
@@ -26,9 +26,9 @@ a research on media type before use is advised.*/
 
 
 body {
-  margin: 5%;
-  padding: 5%;
-  font-family: 'Segoe UI Regular';
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 0%;
+  margin: 0%;
 }
 /*Note: Cross browsers: predefined margin and padding to avoid visual differences*/
 
@@ -80,9 +80,15 @@ h1 {
 }
 
 
+header, .content {
+  margin: 1%;
+  padding: 3%;
+}
+
+
 p {
   text-align: left;
-  font-size: 18px;
+  font-size: 20px;
   background-color: #d8d8d8;
   padding: 10px;
 }
@@ -90,24 +96,26 @@ p {
 
 /*more CSS selectors: CSS Combinators*/
 div p {
-  background-color: blue;
+  /*background-color: blue;*/
 }
 /*CSS descendant: select all <p> elements inside of*/
 div ~ p {
-  background-color: blueviolet;
+  /*background-color: blueviolet;*/
 }
 /*CSS general sibling: select all <p> siblings of*/
 div > p {
-  background-color: brown;
+  /*background-color: brown;*/
 }
 /*CSS child selector: select all <p> elements that are immediate children of*/
 div + p {
-  background-color: firebrick;
+  /*background-color: firebrick;*/
 }
 /*CSS adjacent sibling: select all <p> placed immediately after of*/
 
 
 nav {
+  margin: 0%;
+  padding: 0%;
 }
 
 
@@ -119,7 +127,7 @@ ul.menu-nav, ul.menu-nav ul {
   overflow: hidden;
   padding: 5px;
   border-bottom: 5px solid #007bff;
-  clear: both;
+  /*clear: both;*/
 }
 
   ul.menu-nav li {
@@ -139,8 +147,7 @@ ul.menu-nav, ul.menu-nav ul {
   ul.menu-nav .has-sub ul {
     position: absolute;
     height: 80px;
-    width: 220px;
-    top: 320px;
+    top: 290px;
     display: none;
   }
 
@@ -171,6 +178,20 @@ ul.menu-nav, ul.menu-nav ul {
   border-right: 20px solid transparent;
   border-radius: 10px;
 }
+/*id selector usage*/
+
+.stickTop {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  margin: 0px;
+  z-index: 1;
+}
+
+
+  .stickTop + .menu-nav {
+    margin-top: 80px;
+  }
 
 
 #menu-two > li:hover {
@@ -181,16 +202,15 @@ ul.menu-nav, ul.menu-nav ul {
 #menu-two .has-sub:hover ul {
   display: block;
   text-shadow: 1px 3px 3px gray;
-  /*clear: both;*/
 }
 
   #menu-two .has-sub:hover ul .has-sub ul {
     display: none;
+    width: 200px;
   }
 
 #menu-two .has-sub ul .has-sub:hover ul {
   display: block;
-  /*clear: both;*/
 }
 
 
@@ -208,11 +228,16 @@ ul.menu-nav, ul.menu-nav ul {
 
 
 aside {
+  /*position: fixed;
+  top: 10px;
+  left: 2%;*/
+  display: block;
   float: left;
   padding: 5px;
   margin-left: 5px;
   margin-top: 30px;
   margin-right: 20px;
+  height: 100%;
 }
 
 label.menu-side {
@@ -257,29 +282,6 @@ label.menu-side {
   }
 
 
-/*#menu-three input:hover ~ span {
-  width: 45px;
-  transition-duration: 2s;
-}
-
-  #menu-three input:hover ~ span:nth-child(6) {
-    width: 35px;
-    transition-duration: 2s;
-  }
-
-  #menu-three input:hover ~ span:nth-child(7) {
-    width: 35px;
-    transition-duration: 2s;
-  }
-
-  #menu-three input:hover ~ span:nth-child(2) {
-    width: 5px;
-    height: 10px;
-    transform: translate(70px,70px);
-    transition-duration: 2s;
-  }*/
-
-
 #menu-three input:checked ~ span {
   width: 45px;
   transition-duration: 2s;
@@ -316,42 +318,96 @@ label.menu-side {
 }
 
 
-section {
-  padding: 10px;
-  margin-left: 120px;
+#interact {
+  display: grid;
+  background-color: #fff3b2;
+  width: 100%;
+  top: 20px;
+  padding: 5px;
 }
 
+  #interact div section {
+    padding: 3px;
+    font-weight: bolder;
+  }
 
-article {
-  padding: 10px;
-}
+
+  #interact div {
+    display: block;
+    background-color: #141a1d;
+    padding: 8px;
+    border: 1px solid black;
+  }
+
+  #interact a {
+    display: block;
+    float: left;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    color: #dcdcdc;
+    width: 80%;
+  }
+
+  #interact section {
+    padding: 10px;
+    margin-left: 30px;
+    margin: 20px;
+  }
+
+  #interact div label input {
+    display: none;
+  }
+
+  #interact div label {
+    float: right;
+    width: 40px;
+    height: 30px;
+    padding: 5px;
+  }
+
+    #interact div label span {
+      display: block;
+      background-color: #0094ff;
+      border-radius: 5px;
+      width: 40px;
+      height: 6px;
+      margin: 4px;
+    }
+
+  #interact article {
+    display: block;
+    float: left;
+    padding: 10px;
+  }
+
+  #interact details {
+    display: block;
+    float: left;
+    color: #dcdcdc;
+    padding: 10px;
+    clear: both;
+    /*float affects the latter elements so clearance after float usage*/
+  }
+
+
+  #interact div input:checked ~ span {
+    background-color: #b200ff;
+  }
 
 
 #first-section p:first-letter {
   float: left;
   font-size: 50px;
   color: red;
-  line-height: 80%;
+  line-height: 50%;
   -webkit-text-decoration: underline;
   text-decoration: underline;
   letter-spacing: 5px;
 }
 
 
-.clear {
-  clear: both;
-}
-/*float affects the latter elements so clearance after float usage*/
-
-
-.id-usage {
-  font-size: 2em;
-  color: red;
-}
-/*id selector usage*/
-
-
 table, caption, th, td {
+  color: aliceblue;
   text-align: left;
   border: 2px solid #2faafd;
   border-collapse: collapse;
@@ -360,7 +416,7 @@ table, caption, th, td {
 }
 
 thead {
-  background-color: burlywood;
+  background-color: cornflowerblue;
 }
 
 tbody {
@@ -376,7 +432,7 @@ tfoot {
 
 
 .column-face {
-  background-color: antiquewhite;
+  background-color: crimson;
 }
 
 
@@ -387,7 +443,53 @@ footer {
 
   footer > div {
     padding-top: 10px;
+    animation-name: animated;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-play-state: running;
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
   }
+
+@keyframes animated {
+  /*from {
+  }
+
+  to {
+  }*/
+
+  0% {
+    font-size: 25px;
+    color: #007fff;
+  }
+
+  25% {
+    font-size: 50px;
+    color: #0851f9;
+  }
+
+  50% {
+    font-size: 0;
+    color: #0927ef;
+  }
+
+  75% {
+    font-size: -25px;
+    color: #1809f4;
+  }
+
+  100% {
+    font-size: -50px;
+    color: #3c0af5;
+  }
+}
+
+@-moz-keyframes animated {
+}
+
+@-webkit-keyframes animated {
+}
 
 svg {
   height: 100px;
