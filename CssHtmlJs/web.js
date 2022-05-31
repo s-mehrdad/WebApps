@@ -3,7 +3,7 @@
 /// CSS (modified from old works)
 /// </summary>
 /// <created>ʆϒʅ,13.05.2022</created>
-/// <changed>ʆϒʅ,29.05.2022</changed>
+/// <changed>ʆϒʅ,31.05.2022</changed>
 // --------------------------------------------------------------------------------
 
 
@@ -26,4 +26,46 @@ function scroll() {
     navbarMenuOne.classList.remove("stickTop")
 
   }
+}
+
+
+let a;
+let number;
+function worker() {
+  if (number == undefined) {
+    var number = 0;
+  }
+  number++;
+  postMessage(number);
+  setTimeout(worker.bind(null, number), 1000);
+
+  /*  this.onmessage = function (event) {
+      if (event.data == 2) {
+        number++;
+        console.log(event.data)
+        postMessage(number);
+      }
+      setTimeout(worker(), 500);
+    };*/
+}
+function engine() {
+  if (a == undefined) {
+    /*a = new Worker("web_worker.js");*/
+    blob = new Blob(["(" + worker.toString() + ")()"]);
+    a = new Worker(URL.createObjectURL(blob, { type: "text/JavaScript" }));
+  }
+  if (number == undefined) {
+    var number = 0;
+  }
+  a.onmessage = function (event) {
+    console.log(event.data)
+    document.getElementById("test").innerHTML = number;
+    number++;
+    if (number == 4) {
+      document.getElementById("test").innerHTML = "Happy new year! :)";
+      /*a.postMessage(number);*/
+      a.terminate();
+      a = undefined;
+    }
+  };
 }

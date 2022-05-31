@@ -442,7 +442,7 @@ footer {
 }
 
   footer > div {
-    padding-top: 10px;
+    padding-bottom: 30px;
     animation-name: animated;
     animation-duration: 5s;
     animation-iteration-count: infinite;

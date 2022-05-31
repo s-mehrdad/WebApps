@@ -3,7 +3,7 @@
 /// HTML (modified from old works)
 /// </summary>
 /// <created>ʆϒʅ,13.05.2022</created>
-/// <changed>ʆϒʅ,29.05.2022</changed>
+/// <changed>ʆϒʅ,31.05.2022</changed>
  -------------------------------------------------------------------------------- -->
 
 
@@ -29,6 +29,7 @@
       link tag to connect to external resource-->
 
   <script src="web.js"></script>
+  <script src="web_worker.js"></script>
   <!--link to external JavaScript-->
 
   <script>
@@ -63,7 +64,7 @@
     -->
 
 
-<body style="background-color:#ffffffff" onscroll="scroll()">
+<body style="background-color:#ffffffff" onload="engine()" onscroll="scroll()">
   <!--in-line style sheet (highest priority and over-ridable by !important;)
       note: not a good practice, best practice is higher CSS specificity or equal one later in code.-->
 
@@ -74,6 +75,7 @@
     <!--titles contain the tool tips-->
     <a class="link-class" href="https://www.w3schools.com/" target="_blank">Link to Web development references</a>
     <!--if an address contains " use '-->
+    <p id="test"></p>
   </header>
 
 
