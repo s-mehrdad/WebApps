@@ -1,18 +1,17 @@
 # Introduction 
-A simple web application introduction using HTML, CSS and JavaScript.
+Web application build on HTML, CSS and JavaScript, simple, clear coded and documented.
 
 <table>
 <tr>
 <td><b>clone:</b></td>
 <td>git clone git@github.com:s-mehrdad/WebApps.git</td>
-<td>git clone git@ssh.dev.azure.com:v3/BirdSofts/WebApps/WebApps</td>
 </tr>
 </table>
 
 
 # Getting Started
 1.  Installation process:<br/>
-Open the .html file.
+Web application needs to be opened through .html file or independent local severs.
 
 2.  Software dependencies:<br/>
 Portable on supported web browsers.
@@ -23,7 +22,7 @@ The source code is released.
 4.  API references:<br/>
 
 # Build and Test
-Open web pages.
+Individual .html files are portable on every browser viable wrappers.
 
 
 # Contribute

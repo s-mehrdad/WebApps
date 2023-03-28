@@ -1,9 +1,12 @@
+
 // --------------------------------------------------------------------------------
 /// <summary>
-/// CSS (modified from old works)
+/// web_worker.js
+/// JavaScript worker tread
+/// created by Mehrdad Soleimanimajd on 13.05.2022
 /// </summary>
-/// <created>ʆϒʅ,31.05.2022</created>
-/// <changed>ʆϒʅ,31.05.2022</changed>
+/// <created>ʆϒʅ, 31.05.2022</created>
+/// <changed>ʆϒʅ, 28.03.2023</changed>
 // --------------------------------------------------------------------------------
 
 
