@@ -2,8 +2,8 @@
 /// <summary>
 /// CSS (modified from old works)
 /// </summary>
-/// <created>ʆϒʅ,13.05.2022</created>
-/// <changed>ʆϒʅ,29.05.2022</changed>
+/// <created>ʆϒʅ, 13.05.2022</created>
+/// <changed>ʆϒʅ, 20.02.2023</changed>
  --------------------------------------------------------------------------------*/
 
 
@@ -442,13 +442,13 @@ footer {
 }
 
   footer > div {
-    padding-bottom: 30px;
+    padding-bottom: 40px;
     animation-name: animated;
-    animation-duration: 5s;
+    animation-duration: 2s;
     animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    animation-timing-function: ease-in-out;
     animation-play-state: running;
-    animation-fill-mode: forwards;
+    animation-fill-mode: both;
     animation-direction: alternate;
   }
 
@@ -489,6 +489,30 @@ footer {
 }
 
 @-webkit-keyframes animated {
+  0% {
+    font-size: 10px;
+    color: #007fff;
+  }
+
+  25% {
+    font-size: 20px;
+    color: #0851f9;
+  }
+
+  50% {
+    font-size: 0;
+    color: #0927ef;
+  }
+
+  75% {
+    font-size: 15px;
+    color: #1809f4;
+  }
+
+  100% {
+    font-size: 35px;
+    color: #3c0af5;
+  }
 }
 
 svg {
@@ -501,5 +525,5 @@ ellipse {
   stroke: #007bff;
   fill: azure;
   fill-opacity: 0.5;
-  stroke-width: 2px;
+  stroke-width: 1px;
 }
