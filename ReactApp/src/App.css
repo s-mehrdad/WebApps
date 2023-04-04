@@ -6,22 +6,25 @@
 /// created by Mehrdad Soleimanimajd on 26.03.2023
 /// </summary>
 /// <created>ʆϒʅ, 26.03.2023</created>
-/// <changed>ʆϒʅ, 28.03.2023</changed>
+/// <changed>ʆϒʅ, 04.04.2023</changed>
  -------------------------------------------------------------------------------- */
 
 
 .App {
   text-align: center;
-  height: 100vmax;
+  height: 100%;
   background-color: #282c34;
+  clear: both;
 }
 
 nav {
   /* position: fixed; */
+  display: block;
   width: 100%;
   height: 40px;
   padding: 5px;
-  background-color: #0a4d4e;
+  background-color: #495264;
+  clear: both;
 }
 
 button {
@@ -59,8 +62,8 @@ button {
 aside {
   float: left;
   width: 150px;
-  height: 90vmax;
-  background-color: #7e78ae;
+  height: 100vmin;
+  background-color: #495264;
 }
 
 .App-content {
@@ -81,5 +84,5 @@ aside {
 footer {
   clear: both;
   height: 30px;
-  background-color: #540703;
+  background-color: #95bdff;
 }

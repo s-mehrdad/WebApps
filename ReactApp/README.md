@@ -45,6 +45,7 @@ I appreciate any contribution to the project.
 <td><a href="https://react.dev/learn">React</a></td>
 <td><a href="https://www.taniarascia.com/getting-started-with-react/">React Tutorial</a></td>
 <td><a href="https://www.telerik.com/blogs/beginners-guide-loops-in-react-jsx">React Loops</a></td>
+<td><a href="https://v5.reactrouter.com/web/guides/philosophy">React Router</a></td>
 <td><a href="https://stackoverflow.com/">Stackoverflow</a></td>
 </tr>
 

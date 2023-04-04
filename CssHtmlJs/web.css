@@ -6,7 +6,7 @@
 /// created by Mehrdad Soleimanimajd on 13.05.2022
 /// </summary>
 /// <created>ʆϒʅ, 13.05.2022</created>
-/// <changed>ʆϒʅ, 28.03.2023</changed>
+/// <changed>ʆϒʅ, 04.04.2023</changed>
  --------------------------------------------------------------------------------*/
 
 
@@ -17,11 +17,12 @@
     font-size: inherit;
   }
 }
+
 /*different style rules supporting different media with same style sheet file.
 a research on media type before use is advised.*/
 @media only print {
   p {
-    font-family: 'Segoe UI', Verdana,Arial;
+    font-family: 'Segoe UI', Verdana, Arial;
     font-size: inherit;
     color: black;
   }
@@ -33,6 +34,7 @@ body {
   padding: 0%;
   margin: 0%;
 }
+
 /*Note: Cross browsers: predefined margin and padding to avoid visual differences*/
 
 
@@ -46,35 +48,41 @@ a {
   -webkit-text-decoration: none;
   text-decoration: none;
 }
-  /*element selector usage*/
 
-  /*Notes:*/
-  /*CSS selectors are element, class and id selectors*/
-  /*a custom identifier for selectors never starts with numbers*/
+/*element selector usage*/
+
+/*Notes:*/
+/*CSS selectors are element, class and id selectors*/
+/*a custom identifier for selectors never starts with numbers*/
 
 
-  a.link-class {
-    font-size: 1.2em;
-    /*em size unit is recommended by W3C, encouraging pixels/16=em formula*/
-    font-style: oblique;
-    font-weight: bolder;
-    letter-spacing: 2px;
-    color: #8000FF
-  }
+a.link-class {
+  font-size: 1.2em;
+  /*em size unit is recommended by W3C, encouraging pixels/16=em formula*/
+  font-style: oblique;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  color: #8000FF
+}
 
 .link-class {
   display: block;
   max-height: 40px;
   overflow: hidden;
 }
+
 /*class selector usage*/
 
-a.link-class:hover, a.link-class:active {
+a.link-class:hover,
+a.link-class:active {
   text-align: left;
   font-size: 30px;
   color: sandybrown;
-  transition-duration: 2s;
+  /* based on experience, longer transition require stronger graphic facilities on clients*/
+  transition-duration: 0.2s;
+  transition-delay: 0.3s;
 }
+
 /*pseudo classes usage*/
 
 
@@ -83,7 +91,8 @@ h1 {
 }
 
 
-header, .content {
+header,
+.content {
   margin: 1%;
   padding: 3%;
 }
@@ -101,18 +110,22 @@ p {
 div p {
   /*background-color: blue;*/
 }
+
 /*CSS descendant: select all <p> elements inside of*/
-div ~ p {
+div~p {
   /*background-color: blueviolet;*/
 }
+
 /*CSS general sibling: select all <p> siblings of*/
-div > p {
+div>p {
   /*background-color: brown;*/
 }
+
 /*CSS child selector: select all <p> elements that are immediate children of*/
-div + p {
+div+p {
   /*background-color: firebrick;*/
 }
+
 /*CSS adjacent sibling: select all <p> placed immediately after of*/
 
 
@@ -122,7 +135,8 @@ nav {
 }
 
 
-ul.menu-nav, ul.menu-nav ul {
+ul.menu-nav,
+ul.menu-nav ul {
   list-style: none;
   display: block;
   background-color: #141a1d;
@@ -133,54 +147,60 @@ ul.menu-nav, ul.menu-nav ul {
   /*clear: both;*/
 }
 
-  ul.menu-nav li {
-    float: left; /*float list items next to each other*/
-    height: 30px;
-    width: auto;
-    padding: 5px 10px 5px 10px;
-    border-radius: 10px;
-  }
+ul.menu-nav li {
+  float: left;
+  /*float list items next to each other*/
+  height: 30px;
+  width: auto;
+  padding: 5px 10px 5px 10px;
+  border-radius: 10px;
+}
 
-    ul.menu-nav li a {
-      height: 20px;
-      display: block; /*whole link area click-able*/
-      color: mediumspringgreen;
-    }
+ul.menu-nav li a {
+  height: 20px;
+  display: block;
+  /*whole link area click-able*/
+  color: mediumspringgreen;
+}
 
-  ul.menu-nav .has-sub ul {
-    position: absolute;
-    height: 80px;
-    top: 290px;
-    display: none;
-  }
+ul.menu-nav .has-sub ul {
+  position: absolute;
+  height: 80px;
+  top: 290px;
+  display: none;
+}
 
-  ul.menu-nav .has-sub li {
-    float: none;
-  }
+ul.menu-nav .has-sub li {
+  float: none;
+}
 
-  ul.menu-nav .has-sub ul .has-sub ul {
-    position: relative;
-    height: 40px;
-    top: -20px;
-    left: 80px;
-    display: none;
-    border: 0px;
-  }
+ul.menu-nav .has-sub ul .has-sub ul {
+  position: relative;
+  height: 40px;
+  top: -20px;
+  left: 80px;
+  display: none;
+  border: 0px;
+}
 
-  ul.menu-nav .has-sub ul .has-sub li {
-    float: left;
-  }
+ul.menu-nav .has-sub ul .has-sub li {
+  float: left;
+}
 
 
-#menu-one > li > a:hover::after, #menu-one > li > a:focus::after {
+#menu-one>li>a:hover::after,
+#menu-one>li>a:focus::after {
   content: '';
-  display: block; /*adjustable as blocks*/
+  display: block;
+  /*adjustable as blocks*/
   left: 50%;
-  border-top: 10px dotted forestgreen; /*shorthand property usage*/
+  border-top: 10px dotted forestgreen;
+  /*shorthand property usage*/
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
   border-radius: 10px;
 }
+
 /*id selector usage*/
 
 .stickTop {
@@ -192,12 +212,12 @@ ul.menu-nav, ul.menu-nav ul {
 }
 
 
-  .stickTop + .menu-nav {
-    margin-top: 80px;
-  }
+.stickTop+.menu-nav {
+  margin-top: 80px;
+}
 
 
-#menu-two > li:hover {
+#menu-two>li:hover {
   border-right: 5px solid #007bff;
   text-shadow: 1px 2px 2px red;
 }
@@ -207,17 +227,18 @@ ul.menu-nav, ul.menu-nav ul {
   text-shadow: 1px 3px 3px gray;
 }
 
-  #menu-two .has-sub:hover ul .has-sub ul {
-    display: none;
-    width: 200px;
-  }
+#menu-two .has-sub:hover ul .has-sub ul {
+  display: none;
+  width: 200px;
+}
 
 #menu-two .has-sub ul .has-sub:hover ul {
   display: block;
 }
 
 
-#menu-two > li > a:hover ~ span, #menu-two > li > a:focus ~ span {
+#menu-two>li>a:hover~span,
+#menu-two>li>a:focus~span {
   display: block;
   position: relative;
   left: 10px;
@@ -226,7 +247,7 @@ ul.menu-nav, ul.menu-nav ul {
   height: 10px;
   border-radius: 10px;
   transform: scaleX(3);
-  transition: 0.3s cubic-bezier(.3,.2,.5,.8);
+  transition: 0.3s cubic-bezier(.3, .2, .5, .8);
 }
 
 
@@ -245,7 +266,8 @@ aside {
 
 label.menu-side {
   display: none;
-  /*float: left;*/ /*arrange one after another and same size*/
+  /*float: left;*/
+  /*arrange one after another and same size*/
   background-color: #1063DF;
   height: 0px;
   width: auto;
@@ -254,11 +276,11 @@ label.menu-side {
   cursor: pointer;
 }
 
-  label.menu-side > a {
-    padding: 5px;
-    height: 20px;
-    color: #ffffff;
-  }
+label.menu-side>a {
+  padding: 5px;
+  height: 20px;
+  color: #ffffff;
+}
 
 
 #menu-three input {
@@ -275,47 +297,49 @@ label.menu-side {
   margin: 6px;
 }
 
-  #menu-three span:nth-child(2) {
-    height: 10px;
-    width: 10px;
-    border-right-width: 20px;
-    border-radius: 5px;
-    margin: 2px;
-    transform: translateX(70px);
-  }
+#menu-three span:nth-child(2) {
+  height: 10px;
+  width: 10px;
+  border-right-width: 20px;
+  border-radius: 5px;
+  margin: 2px;
+  transform: translateX(70px);
+}
 
 
-#menu-three input:checked ~ span {
+#menu-three input:checked~span {
   width: 45px;
   transition-duration: 2s;
 }
 
-  #menu-three input:checked ~ span:nth-child(6) {
-    width: 35px;
-    transition-duration: 2s;
-  }
+#menu-three input:checked~span:nth-child(6) {
+  width: 35px;
+  transition-duration: 2s;
+}
 
-  #menu-three input:checked ~ span:nth-child(7) {
-    width: 35px;
-    transition-duration: 2s;
-  }
+#menu-three input:checked~span:nth-child(7) {
+  width: 35px;
+  transition-duration: 2s;
+}
 
-  #menu-three input:checked ~ span:nth-child(2) {
-    width: 5px;
-    height: 10px;
-    transform: translate(70px,70px);
-    transition-duration: 2s;
-  }
+#menu-three input:checked~span:nth-child(2) {
+  width: 5px;
+  height: 10px;
+  transform: translate(70px, 70px);
+  transition-duration: 2s;
+}
 
 
-#menu-three input:checked ~ label.menu-side {
-  display: inline; /*arrange one after another and different size*/
+#menu-three input:checked~label.menu-side {
+  display: inline;
+  /*arrange one after another and different size*/
   height: 400px;
   transition-property: all;
 }
 
 
-#menu-three a:hover, #menu-three a:focus {
+#menu-three a:hover,
+#menu-three a:focus {
   color: red;
   transition-duration: 1s;
 }
@@ -329,73 +353,73 @@ label.menu-side {
   padding: 5px;
 }
 
-  #interact div section {
-    padding: 3px;
-    font-weight: bolder;
-  }
+#interact div section {
+  padding: 3px;
+  font-weight: bolder;
+}
 
 
-  #interact div {
-    display: block;
-    background-color: #141a1d;
-    padding: 8px;
-    border: 1px solid black;
-  }
+#interact div {
+  display: block;
+  background-color: #141a1d;
+  padding: 8px;
+  border: 1px solid black;
+}
 
-  #interact a {
-    display: block;
-    float: left;
-    -webkit-text-decoration: none;
-    text-decoration: none;
-    color: #dcdcdc;
-    width: 80%;
-  }
+#interact a {
+  display: block;
+  float: left;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #dcdcdc;
+  width: 80%;
+}
 
-  #interact section {
-    padding: 10px;
-    margin-left: 30px;
-    margin: 20px;
-  }
+#interact section {
+  padding: 10px;
+  margin-left: 30px;
+  margin: 20px;
+}
 
-  #interact div label input {
-    display: none;
-  }
+#interact div label input {
+  display: none;
+}
 
-  #interact div label {
-    float: right;
-    width: 40px;
-    height: 30px;
-    padding: 5px;
-  }
+#interact div label {
+  float: right;
+  width: 40px;
+  height: 30px;
+  padding: 5px;
+}
 
-    #interact div label span {
-      display: block;
-      background-color: #0094ff;
-      border-radius: 5px;
-      width: 40px;
-      height: 6px;
-      margin: 4px;
-    }
+#interact div label span {
+  display: block;
+  background-color: #0094ff;
+  border-radius: 5px;
+  width: 40px;
+  height: 6px;
+  margin: 4px;
+}
 
-  #interact article {
-    display: block;
-    float: left;
-    padding: 10px;
-  }
+#interact article {
+  display: block;
+  float: left;
+  padding: 10px;
+}
 
-  #interact details {
-    display: block;
-    float: left;
-    color: #dcdcdc;
-    padding: 10px;
-    clear: both;
-    /*float affects the latter elements so clearance after float usage*/
-  }
+#interact details {
+  display: block;
+  float: left;
+  color: #dcdcdc;
+  padding: 10px;
+  clear: both;
+  /*float affects the latter elements so clearance after float usage*/
+}
 
 
-  #interact div input:checked ~ span {
-    background-color: #b200ff;
-  }
+#interact div input:checked~span {
+  background-color: #b200ff;
+}
 
 
 #first-section p:first-letter {
@@ -409,7 +433,10 @@ label.menu-side {
 }
 
 
-table, caption, th, td {
+table,
+caption,
+th,
+td {
   color: aliceblue;
   text-align: left;
   border: 2px solid #2faafd;
@@ -430,8 +457,7 @@ tfoot {
   background-color: cornflowerblue;
 }
 
-.table-face {
-}
+.table-face {}
 
 
 .column-face {
@@ -444,16 +470,16 @@ footer {
   align-content: center;
 }
 
-  footer > div {
-    padding-bottom: 40px;
-    animation-name: animated;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-    animation-play-state: running;
-    animation-fill-mode: both;
-    animation-direction: alternate;
-  }
+footer>div {
+  padding-bottom: 40px;
+  animation-name: animated;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps(0.3);
+  animation-play-state: running;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+}
 
 @keyframes animated {
   /*from {
@@ -488,8 +514,7 @@ footer {
   }
 }
 
-@-moz-keyframes animated {
-}
+@-moz-keyframes animated {}
 
 @-webkit-keyframes animated {
   0% {
