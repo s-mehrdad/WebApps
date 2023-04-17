@@ -1,0 +1,158 @@
+
+/* --------------------------------------------------------------------------------
+/// <summary>
+/// *.*
+/// project
+/// created by Mehrdad Soleimanimajd on 15.04.2023
+/// </summary>
+/// <created>ʆϒʅ, 15.04.2023</created>
+/// <changed>ʆϒʅ, 17.04.2023</changed>
+ -------------------------------------------------------------------------------- */
+
+
+@media screen {}
+
+@media print {}
+
+body {
+  background-color: aliceblue !important;
+}
+
+#navOne {
+  display: gird;
+  position: sticky;
+  top: 5px;
+  /* align-items: center;
+  align-content: center;
+  justify-items: center; */
+  left: calc(50%/2);
+  width: 50%;
+  top: 5px;
+  /* height: 100px; */
+  background-color: #62bbe3;
+  padding: 1px;
+  border-radius: 5px;
+}
+
+#navOne #OneN {
+  display: block;
+  top: 20px;
+  /* width: 50%; */
+  position: fixed;
+  background-color: red;
+  /* border-radius: 10px; */
+}
+
+#navOne:first-child {
+  /* display: block; */
+  /* top: 5px; */
+  /* left: calc(50%/2);
+  width: 50%; */
+  position: fixed;
+  background-color: #62bbe3;
+  /* border-radius: 10px; */
+}
+
+#navOne #TwoN {
+  display: block;
+  top: 40px;
+  /* left: calc(50%/2); */
+  /* width: 50%; */
+  position: fixed;
+  background-color: cadetblue;
+  /* border-radius: 10px; */
+}
+
+aside {
+  top: 5px;
+  position: fixed;
+  display: block;
+  float: left;
+  width: 20vw;
+  height: auto;
+  background-color: #62bbe3;
+  /* padding: 1px; */
+}
+
+.contentC {
+  /* display: block; */
+  position: sticky;
+  top: 80%;
+  /* align-items: center;
+  align-content: center;
+  justify-items: center; */
+  left: calc(50%/2);
+  width: 50%;
+  /* top: 200px; */
+  /* height: 100px; */
+  background-color: #62bbe3;
+  padding: 1px;
+}
+
+.headerCnav {
+  /* align-items: center;
+  justify-content: center; */
+  /* top: 0; */
+  height: 10vh;
+  width: 100%;
+  /* display: flex; */
+  /* clear: both; */
+  background-color: #ecd8b4;
+  margin: 0;
+}
+
+.shrinkCnav {
+  /* display: block; */
+  /* position: relative; */
+  /* top:-100px; */
+  width: 50%;
+  height: 20%;
+  /* justify-content: center; */
+  /* clear: both; */
+  border-radius: 10px;
+}
+
+.headerCaside {
+  align-items: center;
+  justify-content: center;
+  /* top: 0; */
+  height: 30vh;
+  width: 100%;
+  display: flex;
+  /* clear: both; */
+  background-color: #ecd8b4;
+}
+
+.shrinkCaside {
+  /* display: block; */
+  /* position: relative; */
+  width: 100%;
+  height: 20%;
+  /* height: 20%; */
+  justify-content: center;
+  /* clear: both; */
+}
+
+.textC {
+  align-items: center;
+  justify-content: center;
+  /* height: 100vh; */
+  display: grid;
+  /* clear: both; */
+}
+
+/* .holdC {
+  display: block;
+  position: fixed;
+  top: 10;
+  left: calc((100%/2)-100lh);
+  justify-content: center;
+} */
+
+.headerC:hover {
+  color: red;
+}
+
+/* .headerC: {
+  color: blue;
+} */

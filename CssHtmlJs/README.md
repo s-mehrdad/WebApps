@@ -22,7 +22,7 @@ The source code is released.
 4.  API references:<br/>
 
 # Build and Test
-Individual .html files are portable on every browser viable wrappers.
+Individual .html files are portable on every browser viewable wrappers.
 
 
 # Contribute

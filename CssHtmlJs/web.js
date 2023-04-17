@@ -6,12 +6,17 @@
 /// created by Mehrdad Soleimanimajd on 13.05.2022
 /// </summary>
 /// <created>ʆϒʅ, 13.05.2022</created>
-/// <changed>ʆϒʅ, 28.03.2023</changed>
+/// <changed>ʆϒʅ, 15.04.2023</changed>
 // --------------------------------------------------------------------------------
 
 
 function changeStyle() {
+  console.assert(document.getElementById("JavaScript"), true, document.getElementById("JavaScript").style.backgroundColor = "#f0820d");
+  console.assert(document.getElementById("JavaScriptTwo"), false, document.getElementById("JavaScript").style.backgroundColor = "#31a7f9");
+  // console.assert(document.getElementById("JavaScript"), false, document.getElementsById("JavaScript").style.color = "#f4770d");
   document.getElementById("JavaScript").style.fontSize = "25px";
+  console.assert(document.getElementsByName("body"), true, console.log(true));
+  console.assert(1 << 2 == 0, true, console.log("one"));
 }
 
 
@@ -41,6 +46,7 @@ function worker() {
   number++;
   postMessage(number);
   setTimeout(worker.bind(null, number), 1000);
+  // setTimeout(worker(), 1000);
 
   /*  this.onmessage = function (event) {
       if (event.data == 2) {
@@ -52,10 +58,15 @@ function worker() {
     };*/
 }
 function engine() {
-  if (a == undefined) {
-    /*a = new Worker("web_worker.js");*/
-    blob = new Blob(["(" + worker.toString() + ")()"]);
-    a = new Worker(URL.createObjectURL(blob, { type: "text/JavaScript" }));
+  if (typeof (Worker) != undefined) {
+    if (a == undefined) {
+      // a = new Worker("web_worker.js");
+      // blob = new Blob(["(" + worker_js.toString() + ")()"]);
+      blob = new Blob(["(" + worker.toString() + ")()"]);
+      a = new Worker(URL.createObjectURL(blob, { type: "text/JavaScript" }));
+    }
+  } else {
+
   }
   if (number == undefined) {
     var number = 0;
