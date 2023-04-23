@@ -1,7 +1,9 @@
 # Introduction 
 Responsive effects in web applications build on back of HTML, CSS and JavaScript.
 
-<video src="https://www.github.com/s-mehrdad/WebApps/CssHtmlJs/effects/blob/master/screenshots/ScreenRecording-2023-04-22-at-10-44-56-PM.mov" type="video/mov" width="640" height="1024" preload autoplay muted>Video is not supported!</video>
+<!-- TODO upload and add video -->
+
+<img href="https://github.com/s-mehrdad" src="https://github.com/s-mehrdad/WebApps/CssHtmlJs/effects/blob/master/screenshots/ScreenShot-2023-04-22-at-10-42-16-PM.png" width="824" height="464" alt="ScreenShot">
 
 <table>
 <tr>

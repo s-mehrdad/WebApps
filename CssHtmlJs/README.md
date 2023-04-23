@@ -1,7 +1,9 @@
 # Introduction 
 Web application build on HTML, CSS and JavaScript, simple, clear coded and documented.
 
-<video src="https://www.github.com/s-mehrdad/WebApps/CssHtmlJs/blob/master/screenshots/ScreenRecording-2023-04-10-at-4-03-23-PM.mov" type="video/mov" width="640" height="1024" preload autoplay muted>Video is not supported!</video>
+https://youtube.com/shorts/ESSnnC4H-vo
+
+<img href="https://github.com/s-mehrdad" src="https://github.com/s-mehrdad/WebApps/CssHtmlJs/blob/master/screenshots/ScreenShot-2023-04-10-at-12-48-41-AM.png" width="824" height="464" alt="ScreenShot">
 
 <table>
 <tr>
