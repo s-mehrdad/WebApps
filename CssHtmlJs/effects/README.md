@@ -1,9 +1,9 @@
 # Introduction 
 Responsive effects in web applications build on back of HTML, CSS and JavaScript.
 
-<!-- TODO upload and add video -->
+https://user-images.githubusercontent.com/43612903/234182369-b3c02f50-bc56-4c13-b8b5-981b019b717b.mov
 
-<img href="https://github.com/s-mehrdad" src="https://github.com/s-mehrdad/WebApps/CssHtmlJs/effects/blob/master/screenshots/ScreenShot-2023-04-22-at-10-42-16-PM.png" width="824" height="464" alt="ScreenShot">
+<img href="https://github.com/s-mehrdad" src="https://github.com/s-mehrdad/WebApps/blob/master/CssHtmlJs/effects/screenshots/ScreenShot-2023-04-22-at-10-42-16-PM.png" width="824" height="464" alt="ScreenShot">
 
 <table>
 <tr>
