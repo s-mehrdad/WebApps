@@ -76,19 +76,19 @@ function scrolled() {
         stateSum = 0;
     }
     // for (let index = 0; index < 2; index++) {
-    //     console.log(index);
-    // console.assert(index==0,true,console.log("AA"));
-    // }
-
-    //TODO: reconstruct to arrays and states
-    //TODO: elaborated scrolling
-    // how many? too big? not sort
-    // for all index
-
-    if (debugTest) {
-        // console.log(stateVar);
-        // console.log(stateVarArray);
-        // console.log(goneD);
+        //     console.log(index);
+        // console.assert(index==0,true,console.log("AA"));
+        // }
+        
+        //TODO: reconstruct to arrays and states
+        //TODO: elaborated scrolling
+        // how many? too big? not sort
+        // for all index
+        
+        if (debugTest) {
+            // console.log(stateVar);
+            // console.log(stateVarArray);
+            // console.log(goneD);
         // console.log(goneU);
         // console.log(cardsElements);
         // console.log(stateSum);
@@ -96,11 +96,11 @@ function scrolled() {
         console.log(stateCardsElements);
         console.log(stateAsideElements);
     }
-
+    
     if ((stateSum * stateVarArray.length >= 100) && (stateSum * stateVarArray.length < 400)) {
-
+        
         for (let index = 0; index < stateCardsElements.length; index++) {
-
+            
             console.log(index);
             console.log("loop");
             if (goneD == true) {
@@ -112,25 +112,26 @@ function scrolled() {
                         console.assert(cardsElements, true, console.log(cardsElements));
                         console.log(index);
                     }
-
-                    let top = (20 * (i + 1));
+                    
+                    let top = (20 * (index + 1));
                     cardsElements[index].classList.add("shrinkCcards")
-                    // cardsElements[index].style.top = top.toString() + "px";
-                    // cardsElements[index].style.position = "fixed";
+                    cardsElements[index].style.top = top.toString() + "px";
+                    cardsElements[index].style.position = "fixed";
 
                     //TODO ???
                     console.log("???");
                     stateCardsElements[index] = false;
                     console.log(stateCardsElements[index]);
-
+                    
                     console.assert(cardsElement.firstChild, true, console.log(cardsElement.children));
-                    // cardsElement.children.add(cardsElements(index));
-                    cardsElement.appendChild(cardsElements(index));
+                    // cardsElement.children.add(cardsElements[index]);
+                    cardsElement.appendChild(cardsElements[index]);
                     // let p =document.createElement("p");
                     // cardsElement.append(p);
-
+                    
+                    stateSum = 0;
                     break;
-
+                    
                 } else if (goneU = true) {
 
                     if (stateCardsElements[index] == true) {
