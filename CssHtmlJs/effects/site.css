@@ -1,12 +1,12 @@
 
 /* --------------------------------------------------------------------------------
 /// <summary>
-/// *.*
-/// project
+/// site.css
+/// WebApps effects
 /// created by Mehrdad Soleimanimajd on 15.04.2023
 /// </summary>
 /// <created>ʆϒʅ, 15.04.2023</created>
-/// <changed>ʆϒʅ, 25.04.2023</changed>
+/// <changed>ʆϒʅ, 28.04.2023</changed>
  -------------------------------------------------------------------------------- */
 
 
@@ -112,7 +112,7 @@ aside {
   /* left: calc(50%/2); */
   /* left: 50vh; */
   /* TODO: just slide up at right point */
-  top: 50vh;
+  top: 300px;
   width: 100%;
   /* height: 100px; */
   /* background-color: #62bbe3; */
