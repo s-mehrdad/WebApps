@@ -6,7 +6,7 @@
 /// created by Mehrdad Soleimanimajd on 15.04.2023
 /// </summary>
 /// <created>ʆϒʅ, 15.04.2023</created>
-/// <changed>ʆϒʅ, 28.04.2023</changed>
+/// <changed>ʆϒʅ, 02.05.2023</changed>
 // --------------------------------------------------------------------------------
 
 let debugTest = true;
@@ -72,89 +72,131 @@ function scrolled() {
 
     stateSum += stateRate;
 
-    if (stateSum > 3) {
+    if (stateSum > 5) {
         stateSum = 0;
     }
+
+    if (stateVarArray.length > 202) {
+        stateVarArray.pop();
+    }
     // for (let index = 0; index < 2; index++) {
-        //     console.log(index);
-        // console.assert(index==0,true,console.log("AA"));
-        // }
-        
-        //TODO: reconstruct to arrays and states
-        //TODO: elaborated scrolling
-        // how many? too big? not sort
-        // for all index
-        
-        if (debugTest) {
-            // console.log(stateVar);
-            // console.log(stateVarArray);
-            // console.log(goneD);
-        // console.log(goneU);
+    //     console.log(index);
+    // console.assert(index==0,true,console.log("AA"));
+    // }
+
+    //TODO: reconstruct to arrays and states
+    //TODO: elaborated scrolling
+    // how many? too big? not sort
+    // for all index
+
+    if (debugTest) {
+        // console.log(stateVar);
+        // console.log(stateVarArray);
+        // console.log(stateVarArray.length);
         // console.log(cardsElements);
         // console.log(stateSum);
         // console.log(stateVarArray.length);
-        console.log(stateCardsElements);
-        console.log(stateAsideElements);
+        // console.log(stateCardsElements);
+        // console.log(stateAsideElements);
     }
-    
+
     if ((stateSum * stateVarArray.length >= 100) && (stateSum * stateVarArray.length < 400)) {
-        
+
+        console.log(stateCardsElements);
         for (let index = 0; index < stateCardsElements.length; index++) {
-            
-            console.log(index);
-            console.log("loop");
+
             if (goneD == true) {
-                if (stateCardsElements[index] == true) {
+                console.log("goneD");
+                if ((stateCardsElements[index] == true) && (stateAsideElements[index] == true)) {
+
+                    // TODO:
+                    cardsElements = document.querySelectorAll(".headerCcards");
+                    asideElements = document.querySelectorAll(".headerCaside");
+                    console.log(cardsElements);
+                    console.log(asideElements);
 
                     if (debugTest = true) {
-                        console.log(stateSum * stateVarArray.length);
-                        console.log(cardsElements.length);
+                        // console.log(stateSum * stateVarArray.length);
+                        // console.log(cardsElements.length);
                         console.assert(cardsElements, true, console.log(cardsElements));
                         console.log(index);
                     }
-                    
+
+                    // cardsElement.children.add(cardsElements[index]);
+                    cardsElement.appendChild(cardsElements[index]);
+                    if (asideElements[index] != undefined) {
+                        asideElement.appendChild(asideElements[index]);
+                    }
+
                     let top = (20 * (index + 1));
                     cardsElements[index].classList.add("shrinkCcards")
                     cardsElements[index].style.top = top.toString() + "px";
-                    cardsElements[index].style.position = "fixed";
+                    // cardsElements[index].style.position = "fixed";
 
-                    //TODO ???
-                    console.log("???");
+                    asideElements[index].classList.add("shrinkCaside")
+                    // asideElements[index].style.top = top.toString() + "px";
+
                     stateCardsElements[index] = false;
-                    console.log(stateCardsElements[index]);
-                    
-                    console.assert(cardsElement.firstChild, true, console.log(cardsElement.children));
-                    // cardsElement.children.add(cardsElements[index]);
-                    cardsElement.appendChild(cardsElements[index]);
-                    // let p =document.createElement("p");
-                    // cardsElement.append(p);
-                    
-                    stateSum = 0;
-                    break;
-                    
-                } else if (goneU = true) {
 
-                    if (stateCardsElements[index] == true) {
+                    stateAsideElements[index] = false;
 
-                        cardsElements[index].classList.remove("shrinkCcards")
-                        cardsElements[index].style.top = "unset";
-                        cardsElements[index].style.position = "sticky";
-
-                        //TODO ...?
-                        console.log("...?");
-                        cardsElements(index - 1).before(cardsElements(index));
-
-                        console.log("...");
-                        stateCardsElements[index] = false;
+                    if (debugTest = true) {
+                        // console.assert(cardsElement.firstChild, true, console.log(cardsElement.children));
                         console.log(stateCardsElements[index]);
-
-                        // stateCardsElements[index] = true;
+                        console.log(stateAsideElements[index]);
                     }
 
+                    stateSum = -50;
+                    break;
                 }
             }
         }
+
+        for (let index = stateCardsElements.length - 1; index >= 0; index--) {
+
+            if (goneU == true) {
+                console.log("goneU");
+
+                if ((stateCardsElements[index] == false) && (stateAsideElements[index] == false)) {
+
+                    cardsElements = document.querySelectorAll(".headerCcards");
+                    asideElements = document.querySelectorAll(".headerCaside");
+
+                    //BUG: debug!
+                    console.log(cardsElements);
+                    console.log(asideElements);
+
+                    cardsElements[index].classList.remove("shrinkCcards")
+                    cardsElements[index].style.top = "unset";
+                    // cardsElements[index].style.position = "sticky";
+
+                    asideElements[index].classList.remove("shrinkCaside")
+                    asideElements[index].style.top = "unset";
+
+                    contentElement.appendChild(cardsElements[index]);
+
+                    contentElement.appendChild(asideElements[index]);
+
+                    stateCardsElements[index] = true;
+
+                    stateAsideElements[index] = true;
+
+                    if (debugTest = true) {
+                        // console.assert(cardsElement.firstChild, true, console.log(cardsElement.children));
+                        console.log(stateCardsElements[index]);
+                        console.log(stateAsideElements[index]);
+                    }
+
+                    stateSum = -50;
+                    break;
+                }
+
+            }
+        }
     }
+
+    stateVar = scrollY;
+    stateVarArray.unshift(scrollY);
 
     // if ((stateSum * stateVarArray.length >= 401) && (stateSum * stateVarArray.length < 700)) {
     //     for (let index = 0; index < stateAsideElements.length; index++) {
@@ -177,7 +219,6 @@ function scrolled() {
 
     //         }
     //     }
-
 
     // if (goneD == true) {
 
@@ -265,6 +306,5 @@ function scrolled() {
     //         elementThreeA.classList.remove("shrinkCaside")
     //     }
     // }
-    stateVar = scrollY;
-    stateVarArray.push(scrollY);
+
 }
