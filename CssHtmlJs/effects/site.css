@@ -6,7 +6,7 @@
 /// created by Mehrdad Soleimanimajd on 15.04.2023
 /// </summary>
 /// <created>ʆϒʅ, 15.04.2023</created>
-/// <changed>ʆϒʅ, 02.05.2023</changed>
+/// <changed>ʆϒʅ, 04.05.2023</changed>
  -------------------------------------------------------------------------------- */
 
 
@@ -20,7 +20,7 @@
 
 body {
   background-color: aliceblue !important;
-  padding: 2px;
+  padding: 5px;
   scroll-behavior: smooth;
   scroll-snap-type: mandatory;
 }
@@ -37,16 +37,18 @@ body {
 
 #cardsOne {
   /* display: none; */
-  position: sticky;
+  position: fixed;
   grid-column: 1 / 2;
   grid-row: 1;
   /* align-items: center;
   align-content: center;
   justify-items: center; */
-  left: calc(50%/2);
-  width: 350px;
+  /* left: calc(50%/2); */
+  /* left: calc(5px+150px+20px); ?? */
+  left: 180px;
+  width: 100%;
   top: 3px;
-  height: 150%;
+  height: 20px;
   background-color: #62bbe3;
   /* padding: 5px; */
   border-radius: 5px;
@@ -62,8 +64,8 @@ body {
   /* border-radius: 10px; */
 }
 
-#cardsOne:first-child {
-  /* display: block; */
+#cardsOnea:first-child {
+  display: block;
   /* top: 5px; */
   /* left: calc(50%/2);
   width: 50%; */
@@ -96,31 +98,30 @@ aside {
   background-color: #62bbe3;
   padding: 5px;
   padding-inline-start: 0;
-  /* z-index: 0; */
+  z-index: 3;
 }
 
-#OneA:hover {
+aside .headerCaside:hover {
   border: 1px solid red;
   position: relative;
   /* top: inherit; */
-  left: 100px;
-  z-index: 4;
+  left: 30px;
+  /* z-index: 3; */
+  height: fit-content;
+  width: 200px;
 }
 
-#OneA span {
+aside .headerCaside:hover+span {
   display: block;
-  background-color: #143a88;
-  width: 30px;
-  height: 30px;
-}
-
-#cAsideContent:hover~span {
-  display: block;
-  position: fixed;
+  position: relative;
   content: " ";
-  left: 10px;
-  /* background-color: #cd4be1; */
-  border: 5px solid red;
+  /* left: 5%; */
+  width: 110%;
+  /* height: 10px; */
+  background-color: #cd4be1;
+  border: 1px solid #2884e7;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .contentC {
@@ -143,7 +144,7 @@ aside {
   /* margin-left: 10%; */
   border-radius: 5px;
   /* padding: 1px; */
-  z-index: 3;
+  z-index: 2;
 }
 
 .headerCcards {
@@ -158,6 +159,7 @@ aside {
   /* clear: both; */
   /* margin: 5%; */
   background: linear-gradient(#cd4be1, #3fb5e3);
+  z-index: 0;
 }
 
 .shrinkCcards {
@@ -183,6 +185,7 @@ aside {
   /* display: flex; */
   /* clear: both; */
   background: linear-gradient(#54e4ca, #3fb5e3);
+  z-index: 0;
 }
 
 .shrinkCaside {
@@ -190,13 +193,14 @@ aside {
   /* position: relative; */
   width: 90%;
   /* height: auto; */
-  height: 100px;
+  height: 20%;
   overflow: hidden;
   justify-content: center;
   /* clear: both; */
   padding: 5px;
   border: 1px solid #143a88;
   border-radius: 10px;
+  z-index: 3;
 }
 
 .textC {
@@ -214,7 +218,7 @@ aside {
   /* clear: both; */
   /* margin: 5%; */
   /* padding: 5px; */
-  /* z-index: 0; */
+  z-index: 0;
 }
 
 /* .holdC {

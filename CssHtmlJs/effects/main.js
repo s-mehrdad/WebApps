@@ -6,43 +6,46 @@
 /// created by Mehrdad Soleimanimajd on 15.04.2023
 /// </summary>
 /// <created>ʆϒʅ, 15.04.2023</created>
-/// <changed>ʆϒʅ, 02.05.2023</changed>
+/// <changed>ʆϒʅ, 04.05.2023</changed>
 // --------------------------------------------------------------------------------
 
-let debugTest = true;
+let debugOrTest = true;
 
-let stateVarArray = [0];
-
-let stateVar = 0;
-let stateSum = 0;
-let stateCardsElements = [];
-let stateAsideElements = [];
+let stateScroll = 0;
 
 let goneD = false;
 let goneU = false;
+let stateSumGoneD = 0;
+let stateSumGoneU = 0;
+
+let stateRateArray = [0];
+let stateRateSum = 0;
+let stateRateAverage = 0;
+
+let stateCardsElements = [];
+let stateAsideElements = [];
 
 function scrolled() {
 
-    // if (debugTest) {
-    //     console.log(scrollX);
-    //     console.log(scrollY);
-    // }
+    if (debugOrTest == true) {
+        // console.log(scrollX);
+        // console.log(scrollY);
+    }
 
-    let qScrolled = false;
+    // let elementOneC = document.getElementById("OneC");
+    // let elementTwoC = document.getElementById("TwoC");
+    // let elementThreeC = document.getElementById("ThreeC");
 
-    let elementOneC = document.getElementById("OneC");
-    let elementTwoC = document.getElementById("TwoC");
-    let elementThreeC = document.getElementById("ThreeC");
-
-    let elementOneA = document.getElementById("OneA");
-    let elementTwoA = document.getElementById("TwoA");
-    let elementThreeA = document.getElementById("ThreeA");
+    // let elementOneA = document.getElementById("OneA");
+    // let elementTwoA = document.getElementById("TwoA");
+    // let elementThreeA = document.getElementById("ThreeA");
 
     let cardsElement = document.getElementById("cardsOne");
     let asideElement = document.getElementById("asideOne");
+
     let contentElement = document.getElementById("contentOne");
 
-    // let textCElement = document.querySelector(".textC");
+    let textCElement = document.querySelector(".textC");
 
     let cardsElements = document.querySelectorAll(".headerCcards");
     let asideElements = document.querySelectorAll(".headerCaside");
@@ -52,80 +55,135 @@ function scrolled() {
             stateAsideElements.push(true);
             stateCardsElements.push(true);
         }
-
     }
 
     let stateRate = 0;
 
-    if (stateVar > scrollY) {
-        goneU = true;
-        stateRate = stateVar - scrollY;
-    } else {
-        goneU = false;
-    }
-    if (stateVar < scrollY) {
+    if (stateScroll < scrollY) {
         goneD = true;
-        stateRate = scrollY - stateVar;
+        goneU = false;
+        stateRate = scrollY - stateScroll;
+
+        // stateSumGoneD += stateRate;
+        // stateSumGoneU = -100;
+        // console.log("stateSumGoneUreset");
     } else {
+        goneU = true;
         goneD = false;
-    }
+        stateRate = stateScroll - scrollY;
 
-    stateSum += stateRate;
-
-    if (stateSum > 5) {
-        stateSum = 0;
+        // stateSumGoneU += stateRate;
+        // stateSumGoneD = -100;
+        // console.log("stateSumGoneDreset");
     }
+    // stateSum = -5;
+    // console.log("goneUreset");
+    // stateSum = -5;
+    // console.log("goneDreset");
 
-    if (stateVarArray.length > 202) {
-        stateVarArray.pop();
-    }
-    // for (let index = 0; index < 2; index++) {
-    //     console.log(index);
-    // console.assert(index==0,true,console.log("AA"));
+    stateScroll = scrollY;
+    stateRateArray.unshift(stateRate);
+
+    stateRateAverage = (stateRate + stateRateArray[0]) / stateRateArray.length;
+
+    // if (stateSumGoneU > 5) {
+        //     stateSumGoneU = 0;
+        // }
+        // if (stateSumGoneD > 5) {
+            //     stateSumGoneD = 0;
     // }
 
-    //TODO: reconstruct to arrays and states
-    //TODO: elaborated scrolling
+    if (stateRateArray.length > 11) {
+        stateRateArray.pop();
+    }
+
+    ////[x]: reconstruct to arrays and states
+    ////[x]: elaborated scrolling
     // how many? too big? not sort
     // for all index
 
-    if (debugTest) {
+    if (debugOrTest == true) {
         // console.log(stateVar);
         // console.log(stateVarArray);
         // console.log(stateVarArray.length);
         // console.log(cardsElements);
         // console.log(stateSum);
-        // console.log(stateVarArray.length);
         // console.log(stateCardsElements);
         // console.log(stateAsideElements);
     }
 
-    if ((stateSum * stateVarArray.length >= 100) && (stateSum * stateVarArray.length < 400)) {
+    // let stateSum = 0;
+    // if ((goneD == true) && (stateSumGoneD >= 0)) {
+    //     stateSum = stateSumGoneD;
+    // } else {
+    //     stateSumGoneD = -5;
+    // }
+    // if (goneU == true && (stateSumGoneU >= 0)) {
+    //     stateSum = stateSumGoneU;
+    // } else {
+    //     stateSumGoneU = -5;
+    // }
+    // console.log(stateSum);
 
-        console.log(stateCardsElements);
+    let currentSpeed = 0;
+    if ((stateRateAverage >= 0) && (stateRateAverage <= 2)) {
+        currentSpeed = 1;
+    } else
+        if ((stateRateAverage >= 3) && (stateRateAverage <= 5)) {
+            currentSpeed = 2;
+        } else
+            if ((stateRateAverage >= 6) && (stateRateAverage <= 8)) {
+                currentSpeed = 3;
+            }
+
+    if (debugOrTest == true) {
+        // console.log(currentSpeed);
+        // console.log(stateRate);
+        // console.log(stateRateAverage);
+        // console.log(currentSpeed*stateRate);
+
+        for (let index = 0; index < cardsElements.length; index++) {
+            console.log(cardsElements[index].getClientRects().item(0).top);
+            console.log(asideElements[index].getClientRects().item(0).top);
+        }
+    }
+
+    // BUG: debug scrolling
+    // BUG: scrolled now debug
+    //TODO: refresh cards
+    if ((currentSpeed * stateRate >= 10) && (currentSpeed * stateRate < 40)) {
+
+        if (debugOrTest == true) {
+            console.log(stateCardsElements);
+        }
         for (let index = 0; index < stateCardsElements.length; index++) {
 
             if (goneD == true) {
-                console.log("goneD");
+                if (debugOrTest == true) {
+                    // console.log("goneD");
+                }
                 if ((stateCardsElements[index] == true) && (stateAsideElements[index] == true)) {
 
-                    // TODO:
                     cardsElements = document.querySelectorAll(".headerCcards");
                     asideElements = document.querySelectorAll(".headerCaside");
-                    console.log(cardsElements);
-                    console.log(asideElements);
+                    if (debugOrTest == true) {
+                        // console.log(cardsElements);
+                        // console.log(asideElements);
+                    }
 
-                    if (debugTest = true) {
+                    if (debugOrTest == true) {
                         // console.log(stateSum * stateVarArray.length);
                         // console.log(cardsElements.length);
-                        console.assert(cardsElements, true, console.log(cardsElements));
-                        console.log(index);
+                        // console.assert(cardsElements, true, console.log(cardsElements));
+                        // console.log(index);
                     }
 
                     // cardsElement.children.add(cardsElements[index]);
                     cardsElement.appendChild(cardsElements[index]);
                     if (asideElements[index] != undefined) {
                         asideElement.appendChild(asideElements[index]);
+                        let spanElement = document.createElement("span");
+                        asideElement.appendChild(spanElement);
                     }
 
                     let top = (20 * (index + 1));
@@ -140,10 +198,10 @@ function scrolled() {
 
                     stateAsideElements[index] = false;
 
-                    if (debugTest = true) {
+                    if (debugOrTest == true) {
                         // console.assert(cardsElement.firstChild, true, console.log(cardsElement.children));
-                        console.log(stateCardsElements[index]);
-                        console.log(stateAsideElements[index]);
+                        // console.log(stateCardsElements[index]);
+                        // console.log(stateAsideElements[index]);
                     }
 
                     stateSum = -50;
@@ -155,16 +213,20 @@ function scrolled() {
         for (let index = stateCardsElements.length - 1; index >= 0; index--) {
 
             if (goneU == true) {
-                console.log("goneU");
+                if (debugOrTest == true) {
+                    // console.log("goneU");
+                }
 
                 if ((stateCardsElements[index] == false) && (stateAsideElements[index] == false)) {
 
                     cardsElements = document.querySelectorAll(".headerCcards");
                     asideElements = document.querySelectorAll(".headerCaside");
 
-                    //BUG: debug!
-                    console.log(cardsElements);
-                    console.log(asideElements);
+                    //BUG: debug! :|
+                    if (debugOrTest == true) {
+                        // console.log(cardsElements);
+                        // console.log(asideElements);
+                    }
 
                     cardsElements[index].classList.remove("shrinkCcards")
                     cardsElements[index].style.top = "unset";
@@ -181,10 +243,10 @@ function scrolled() {
 
                     stateAsideElements[index] = true;
 
-                    if (debugTest = true) {
+                    if (debugOrTest == true) {
                         // console.assert(cardsElement.firstChild, true, console.log(cardsElement.children));
-                        console.log(stateCardsElements[index]);
-                        console.log(stateAsideElements[index]);
+                        // console.log(stateCardsElements[index]);
+                        // console.log(stateAsideElements[index]);
                     }
 
                     stateSum = -50;
@@ -194,9 +256,6 @@ function scrolled() {
             }
         }
     }
-
-    stateVar = scrollY;
-    stateVarArray.unshift(scrollY);
 
     // if ((stateSum * stateVarArray.length >= 401) && (stateSum * stateVarArray.length < 700)) {
     //     for (let index = 0; index < stateAsideElements.length; index++) {
