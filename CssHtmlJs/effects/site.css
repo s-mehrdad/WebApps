@@ -6,23 +6,27 @@
 /// created by Mehrdad Soleimanimajd on 15.04.2023
 /// </summary>
 /// <created>ʆϒʅ, 15.04.2023</created>
-/// <changed>ʆϒʅ, 04.05.2023</changed>
+/// <changed>ʆϒʅ, 09.05.2023</changed>
  -------------------------------------------------------------------------------- */
-
-
 @media screen {}
 
 @media print {}
 
 :root {
   /* --slidesCount: 3; */
+  --pad-size: 5px;
+  --color-all: #544fe1;
 }
 
 body {
   background-color: aliceblue !important;
-  padding: 5px;
+  padding: var(--pad-size);
   scroll-behavior: smooth;
   scroll-snap-type: mandatory;
+}
+
+.aContentTwo{
+  display: block;
 }
 
 #contentGrid {
@@ -33,6 +37,7 @@ body {
                  "b c c" 1fr
                  "b c c" 1fr/ 10vw, 1fr; */
   gap: 20px;
+  /* background-color: var(--color-all); */
 }
 
 #cardsOne {
@@ -55,7 +60,7 @@ body {
   z-index: 2;
 }
 
-#cardsOne>#OneCa:hover {
+#cardsOne > #OneCa:hover {
   /* display: block; */
   top: 20px;
   /* width: 50%; */
@@ -93,7 +98,7 @@ aside {
   grid-row: 2/3;
   top: 40px;
   width: 150px;
-  height: 100%;
+  height: 100vmax;
   /* height: fit-content; */
   background-color: #62bbe3;
   padding: 5px;
@@ -101,17 +106,17 @@ aside {
   z-index: 3;
 }
 
-aside .headerCaside:hover {
+aside .headerCasides:hover {
   border: 1px solid red;
   position: relative;
   /* top: inherit; */
   left: 30px;
   /* z-index: 3; */
   height: fit-content;
-  width: 200px;
+  width: 300px;
 }
 
-aside .headerCaside:hover+span {
+aside .headerCasides:hover + span {
   display: block;
   position: relative;
   content: " ";
@@ -143,8 +148,90 @@ aside .headerCaside:hover+span {
   /* margin: 5%; */
   /* margin-left: 10%; */
   border-radius: 5px;
-  /* padding: 1px; */
+  padding-top: 200px;
   z-index: 2;
+}
+
+.loadingOne {
+  border: 2px solid #2884e7;
+  width: fit-content;
+  height: 50px;
+  /* background-color: red; */
+}
+
+.loadingOne:hover ~ div.loadingContent {
+  /* background-color: #2884e7; */
+  color: coral;
+  /* transition: color; */
+  /* transition-duration: 2s; */
+  animation-name: wormAnimation;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+
+.loadingHover {
+  display: block;
+  border-top: 5px solid #2884e7;
+  width: 100px;
+  height: 1px;
+  /* background-color: #143a88; */
+}
+
+/* .loadingHover:hover ~ div.loadingContent span.firstOne { */
+.loadingHover:hover ~ div.loadingContent span.firstOne {
+  /* background-color: #2884e7; */
+  color: coral;
+  /* transition: color; */
+  /* transition-duration: 2s; */
+  animation-name: wormAnimation;
+  animation-duration: 2s;
+  animation-delay: .3s;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+
+/* .loadingHover:hover ~ div.loadingContent span.secondOne { */
+.loadingHover:hover ~ div.loadingContent span.secondOne {
+  /* background-color: #2884e7; */
+  color: coral;
+  /* transition: color; */
+  /* transition-duration: 2s; */
+  animation-name: wormAnimation;
+  animation-duration: 2s;
+  animation-delay: .6s;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+
+/* .loadingHover:hover ~ div.loadingContent span.thirdOne { */
+.loadingHover:hover ~ div.loadingContent span.thirdOne {
+  /* background-color: #2884e7; */
+  color: coral;
+  /* transition: color; */
+  /* transition-duration: 2s; */
+  animation-name: wormAnimation;
+  animation-duration: 2s;
+  animation-delay: .9s;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+
+@keyframes wormAnimation {
+  25% {
+    color: red;
+    letter-spacing: 1px;
+  }
+
+  75% {
+    color: black;
+    letter-spacing: 3px;
+  }
+}
+
+.loadingContent {
+  font-size: 30px;
+  color: #154b58;
 }
 
 .headerCcards {
@@ -176,7 +263,7 @@ aside .headerCaside:hover+span {
   border-radius: 10px;
 }
 
-.headerCaside {
+.headerCasides {
   /* align-items: center;
   justify-content: center; */
   /* top: 0; */
@@ -188,12 +275,12 @@ aside .headerCaside:hover+span {
   z-index: 0;
 }
 
-.shrinkCaside {
+.shrinkCasides {
   /* display: block; */
   /* position: relative; */
   width: 90%;
   /* height: auto; */
-  height: 20%;
+  height: 200px;
   overflow: hidden;
   justify-content: center;
   /* clear: both; */
@@ -228,7 +315,6 @@ aside .headerCaside:hover+span {
   left: calc((100%/2)-100lh);
   justify-content: center;
 } */
-
 .headerC:hover {
   color: red;
 }
