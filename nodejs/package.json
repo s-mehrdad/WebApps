@@ -1,0 +1,23 @@
+{
+  "name": "nodejs-hello-node",
+  "version": "1.0.0",
+  "description": "NodeJs Hello node example to provide faster start deploying on Cyclic platform",
+  "scripts": {
+    "serve": "nodemon --watch . nodejs.js",
+    "start": "node nodejs.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s-mehrdad/WebApps.git"
+  },
+  "author": "Mehrdad Soleimanimajd",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/s-mehrdad/WebApps/issues"
+  },
+  "homepage": "https://github.com/s-mehrdad/WebApps#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}

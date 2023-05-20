@@ -38,8 +38,7 @@ check.listen(port, hostname, () => {
       check.close();
     }
   }) == 'no');
-}
-);
+});
 
 var server = http.createServer((req, res) => {
 
@@ -84,24 +83,24 @@ var server = http.createServer((req, res) => {
   console.log('url: ' + req.url + '/');
 });
 
-server.once('error', (err) => {
-  if (err.code == "EADDRINUSE") {
-    readline.question('Port is busy! do you want to try' + (port + 1).toString() + ' port? (yes/no)\t> ', (q) => {
-      if (q == 'yes') {
-        server.close();
-        port++;
-        server.listen(port, hostname, () => {
-          console.log('Server running at http://' + hostname.toString() + ':' + port.toString() + '/');
-        });
-      }
-    });
-  }
-});
+// server.once('error', (err) => {
+//   if (err.code == "EADDRINUSE") {
+//     readline.question('Port is busy! do you want to try' + (port + 1).toString() + ' port? (yes/no)\t> ', (q) => {
+//       if (q == 'yes') {
+//         server.close();
+//         port++;
+//         server.listen(port, hostname, () => {
+//           console.log('Server running at http://' + hostname.toString() + ':' + port.toString() + '/');
+//         });
+//       }
+//     });
+//   }
+// });
 
 server.listen(port, hostname, () => {
   console.log('Server running at http://' + hostname.toString() + ':' + port.toString() + '/');
-  let name = '';
-  readline.question('hi?\t> ', name => {
-    console.log('hey ' + name);
-  });
+  // let name = '';
+  // readline.question('hi?\t> ', name => {
+  //   console.log('hey ' + name);
+  // });
 });
