@@ -1,10 +1,10 @@
 {
   "name": "nodejs-hello-node",
   "version": "1.0.0",
-  "description": "NodeJs Hello node example to provide faster start deploying on Cyclic platform",
+  "description": "NodeJs backed web app.",
   "scripts": {
     "serve": "nodemon --watch . nodejs.js",
-    "start": "node nodejs.js",
+    "start": "node nodeJs.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,5 +19,9 @@
   "homepage": "https://github.com/s-mehrdad/WebApps#readme",
   "devDependencies": {
     "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.3.3"
   }
 }

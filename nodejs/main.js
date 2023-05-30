@@ -6,7 +6,7 @@
 /// created by Mehrdad Soleimanimajd on 15.04.2023
 /// </summary>
 /// <created>ʆϒʅ, 15.04.2023</created>
-/// <changed>ʆϒʅ, 09.05.2023</changed>
+/// <changed>ʆϒʅ, 31.05.2023</changed>
 // --------------------------------------------------------------------------------
 
 let debugOrTest = true;
@@ -27,6 +27,15 @@ let stateCardsElements = [];
 let stateAsidesElements = [];
 
 let stateAllContentElements = [];
+
+var mysql = require("mysql2");
+var db = mysql.createConnection({
+    host: "localhost",
+    port: "3306",
+    user: "root",
+    password: "n123N-password",
+    database: "mydb"
+});
 
 function scrolled() {
 
@@ -178,6 +187,14 @@ function scrolled() {
     }
 
     for (let index = 0; index < allContentElements.length; index++) {
+
+        var calculatedIndex = 0;
+        if (index % 2 == 0) {
+            calculatedIndex = index / 2;
+        } else {
+            calculatedIndex = (index - 1) / 2;
+        }
+
         if (allContentElements[index].getClientRects().item(0).top <= (40 + (index * 20))) {
             let gapElement = document.createElement("div");
             gapElement.classList = "selectGapElement";
@@ -203,6 +220,24 @@ function scrolled() {
                     cardsElement.appendChild(allContentElements[index]);
                     allContentElements[index].classList.add("shrinkCcards")
                     allContentElements[index].style.top = top.toString() + "px";
+
+                    db.connect((err, result) => {
+                        if (err != null) {
+                            console.log(err);
+
+                        } else {
+                            if (debugOrTest) {
+                                console.log(result);
+                            }
+                            var cardsSql = "INSERT INTO cards (id, name, description, packedCounter) VALUES ('" + calculatedIndex.toString() + "','"
+                                + "cards" + calculatedIndex.toString() + "','"
+                                + "card description" + "','"
+                                + calculatedIndex.toString() + "','" + ")";
+                                console.log("1 record inserted!");
+                        }
+
+                    });
+
                 }
 
                 stateAllContentElements[index] = false;
