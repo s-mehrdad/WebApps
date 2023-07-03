@@ -1,16 +1,17 @@
-
-/* --------------------------------------------------------------------------------
+/* ===========================================================================
 /// <summary>
 /// site.css
 /// WebApps effects
 /// created by Mehrdad Soleimanimajd on 15.04.2023
 /// </summary>
 /// <created>ʆϒʅ, 15.04.2023</created>
-/// <changed>ʆϒʅ, 09.05.2023</changed>
- -------------------------------------------------------------------------------- */
-@media screen {}
+/// <changed>ʆϒʅ, 03.07.2023</changed>
+=========================================================================== */
+@media screen {
+}
 
-@media print {}
+@media print {
+}
 
 :root {
   /* --slidesCount: 3; */
@@ -25,7 +26,7 @@ body {
   scroll-snap-type: mandatory;
 }
 
-.aContentTwo{
+.aContentTwo {
   display: block;
 }
 
@@ -186,7 +187,7 @@ aside .headerCasides:hover + span {
   /* transition-duration: 2s; */
   animation-name: wormAnimation;
   animation-duration: 2s;
-  animation-delay: .3s;
+  animation-delay: 0.3s;
   animation-iteration-count: infinite;
   animation-play-state: running;
 }
@@ -199,7 +200,7 @@ aside .headerCasides:hover + span {
   /* transition-duration: 2s; */
   animation-name: wormAnimation;
   animation-duration: 2s;
-  animation-delay: .6s;
+  animation-delay: 0.6s;
   animation-iteration-count: infinite;
   animation-play-state: running;
 }
@@ -212,7 +213,7 @@ aside .headerCasides:hover + span {
   /* transition-duration: 2s; */
   animation-name: wormAnimation;
   animation-duration: 2s;
-  animation-delay: .9s;
+  animation-delay: 0.9s;
   animation-iteration-count: infinite;
   animation-play-state: running;
 }

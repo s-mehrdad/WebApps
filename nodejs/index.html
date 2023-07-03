@@ -1,39 +1,40 @@
-
-<!-- --------------------------------------------------------------------------------
+<!-- =========================================================================
 /// <summary>
 /// index.html
 /// WebApps effects
 /// created by Mehrdad Soleimanimajd on 15.04.2023
 /// </summary>
 /// <created>ʆϒʅ, 15.04.2023</created>
-/// <changed>ʆϒʅ, 20.05.2023</changed>
- -------------------------------------------------------------------------------- -->
-
+/// <changed>ʆϒʅ, 03.07.2023</changed>
+========================================================================== -->
 
 <!DOCTYPE html>
 <html xmlns="http: //www.w3.org/1999/xhtml">
+  <head>
+    <title>WebApplication</title>
+    <base href="" target="_self" />
+    <link rel="stylesheet" type="text/css" href="site.css" />
+    <link rel="icon" href="favicon.ico" />
+    <script src="main.js"></script>
+    <style type="text/css">
+      body {
+        background-color: #2faafdef;
+      }
+    </style>
+    <meta title="websiteTitle" />
+    <meta name="description" content="a delicious web application" />
+    <meta name="keywords" content="HTML,CSS,XHTML,JavaScript,XML" />
+    <meta name="author" content="Mehrdad Soleimanimajd" />
+    <meta lang="en" translate="yes" charset="utf-8" />
+    <!-- <meta http-equiv="180" /> -->
+  </head>
 
-<head>
-  <title>WebApplication</title>
-  <base href="" target="_self" />
-  <link rel="stylesheet" type="text/css" href="site.css" />
-  <link rel="icon" href="favicon.ico" />
-  <script src="main.js"></script>
-  <style type="text/css">
-    body {
-      background-color: #2faafdef
-    }
-  </style>
-  <meta title="websiteTitle" />
-  <meta name="description" content="a delicious web application" />
-  <meta name="keywords" content="HTML,CSS,XHTML,JavaScript,XML" />
-  <meta name="author" content="Mehrdad Soleimanimajd" />
-  <meta lang="en" translate="yes" charset="utf-8" />
-  <!-- <meta http-equiv="180" /> -->
-</head>
-
-<body style="background-color:#ca62e3" onload="webEngine()" onscroll="scrolled()">
-  <!-- <header>
+  <body
+    style="background-color: #ca62e3"
+    onload="webEngine()"
+    onscroll="scrolled()"
+  >
+    <!-- <header>
 
   </header>
   <cards>
@@ -49,137 +50,168 @@
   <detail>
   </detail> -->
 
-  <div id="contentGrid">
+    <div id="contentGrid">
+      <cards id="cardsOne" class="cardsClass">
+        <h1>cards</h1>
+      </cards>
 
-    <cards id="cardsOne" class="cardsClass">
-      <h1>cards</h1>
-    </cards>
+      <aside id="asideOne" class="asideClass">
+        <h1>aside</h1>
+      </aside>
 
-    <aside id="asideOne" class="asideClass">
-      <h1>aside</h1>
-    </aside>
-
-    <div id="contentOne" class="contentC">
-      <div class="loadingOne">
-        <div class="loadingHover">
-          <!-- <div style=" display: inline-block; width: 200px; height: 30px;" class="loadingHover"> -->
+      <div id="contentOne" class="contentC">
+        <div class="loadingOne">
+          <div class="loadingHover">
+            <!-- <div style=" display: inline-block; width: 200px; height: 30px;" class="loadingHover"> -->
+          </div>
+          <div class="loadingContent">
+            <span class="firstOne"> One </span>
+            <span class="secondOne"> Good </span>
+            <span class="thirdOne"> Loading </span>
+          </div>
         </div>
-        <div class="loadingContent">
-          <span class="firstOne">
-            One
-          </span>
-          <span class="secondOne">
-            Good
-          </span>
-          <span class="thirdOne">
-            Loading
-          </span>
+        <div id="OneC" class="headerCcards cardsAsides">
+          <h1>headerOne-cards</h1>
+          <p>Each saw the eyes of, others sided</p>
+          <p>you damn whether if one this minded</p>
+          <p>though ...</p>
+          <p>screens showing through and through</p>
+        </div>
+        <div id="OneA" class="headerCasides cardsAsides">
+          <h1>headerOne-aside</h1>
+          <p>Each saw the eyes of, others sided</p>
+          <p>you damn whether if one this minded</p>
+          <p>though ...</p>
+          <p>screens showing through and through</p>
+        </div>
+        <div id="TwoC" class="headerCcards cardsAsides">
+          <h1>headerTwo-cards</h1>
+          <p>Each saw the eyes of, others sided</p>
+          <p>you damn whether if one this minded</p>
+          <p>though ...</p>
+          <p>screens showing through and through</p>
+        </div>
+        <div id="TwoA" class="headerCasides cardsAsides">
+          <h1>headerTwo-aside</h1>
+          <p>Each saw the eyes of, others sided</p>
+          <p>you damn whether if one this minded</p>
+          <p>though ...</p>
+          <p>screens showing through and through</p>
+        </div>
+        <div id="ThreeC" class="headerCcards cardsAsides">
+          <h1>headerThree-cards</h1>
+          <p>Each saw the eyes of, others sided</p>
+          <p>you damn whether if one this minded</p>
+          <p>though ...</p>
+          <p>screens showing through and through</p>
+        </div>
+        <div id="ThreeA" class="headerCasides cardsAsides">
+          <h1>headerThree-aside</h1>
+          <p>Each saw the eyes of, others sided</p>
+          <p>you damn whether if one this minded</p>
+          <p>though ...</p>
+          <p>screens showing through and through</p>
+        </div>
+
+        <div class="textC">
+          <h1>added Text</h1>
+          <p>
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there
+          </p>
+          <p>
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there
+          </p>
+          <p>
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there
+          </p>
+          <p>
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there
+          </p>
+          <p>
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there
+          </p>
+          <p>
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there
+          </p>
+          <p>
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there
+          </p>
+          <p>
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there
+          </p>
+          <p>
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there
+          </p>
+          <p>
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there
+          </p>
+          <p>
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there
+          </p>
+          <p>
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there
+          </p>
+          <p>
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there randomtextwhich will be there
+            randomtextwhich will be there
+          </p>
         </div>
       </div>
-      <div id="OneC" class="headerCcards cardsAsides">
-        <h1>headerOne-cards</h1>
-        <p>Each saw the eyes of, others sided</p>
-        <p>you damn whether if one this minded</p>
-        <p>though ...</p>
-        <p>screens showing through and through</p>
-      </div>
-      <div id="OneA" class="headerCasides cardsAsides">
-        <h1>headerOne-aside</h1>
-        <p>Each saw the eyes of, others sided</p>
-        <p>you damn whether if one this minded</p>
-        <p>though ...</p>
-        <p>screens showing through and through</p>
-      </div>
-      <div id="TwoC" class="headerCcards cardsAsides">
-        <h1>headerTwo-cards</h1>
-        <p>Each saw the eyes of, others sided</p>
-        <p>you damn whether if one this minded</p>
-        <p>though ...</p>
-        <p>screens showing through and through</p>
-      </div>
-      <div id="TwoA" class="headerCasides cardsAsides">
-        <h1>headerTwo-aside</h1>
-        <p>Each saw the eyes of, others sided</p>
-        <p>you damn whether if one this minded</p>
-        <p>though ...</p>
-        <p>screens showing through and through</p>
-      </div>
-      <div id="ThreeC" class="headerCcards cardsAsides">
-        <h1>headerThree-cards</h1>
-        <p>Each saw the eyes of, others sided</p>
-        <p>you damn whether if one this minded</p>
-        <p>though ...</p>
-        <p>screens showing through and through</p>
-      </div>
-      <div id="ThreeA" class="headerCasides cardsAsides">
-        <h1>headerThree-aside</h1>
-        <p>Each saw the eyes of, others sided</p>
-        <p>you damn whether if one this minded</p>
-        <p>though ...</p>
-        <p>screens showing through and through</p>
-      </div>
 
-      <div class="textC">
-        <h1>added Text</h1>
-        <p>randomtextwhich will be there randomtextwhich will be there randomtextwhich will be there randomtextwhich
-          will
-          be there randomtextwhich will be there randomtextwhich will be there randomtextwhich will be there
-          randomtextwhich will be there randomtextwhich will be there</p>
-        <p>randomtextwhich will be there randomtextwhich will be there randomtextwhich will be there randomtextwhich
-          will
-          be there randomtextwhich will be there randomtextwhich will be there randomtextwhich will be there
-          randomtextwhich will be there randomtextwhich will be there</p>
-        <p>randomtextwhich will be there randomtextwhich will be there randomtextwhich will be there randomtextwhich
-          will
-          be there randomtextwhich will be there randomtextwhich will be there randomtextwhich will be there
-          randomtextwhich will be there randomtextwhich will be there</p>
-        <p>randomtextwhich will be there randomtextwhich will be there randomtextwhich will be there randomtextwhich
-          will
-          be there randomtextwhich will be there randomtextwhich will be there randomtextwhich will be there
-          randomtextwhich will be there randomtextwhich will be there</p>
-        <p>randomtextwhich will be there randomtextwhich will be there randomtextwhich will be there randomtextwhich
-          will
-          be there randomtextwhich will be there randomtextwhich will be there randomtextwhich will be there
-          randomtextwhich will be there randomtextwhich will be there</p>
-        <p>randomtextwhich will be there randomtextwhich will be there randomtextwhich will be there randomtextwhich
-          will
-          be there randomtextwhich will be there randomtextwhich will be there randomtextwhich will be there
-          randomtextwhich will be there randomtextwhich will be there</p>
-        <p>randomtextwhich will be there randomtextwhich will be there randomtextwhich will be there randomtextwhich
-          will
-          be there randomtextwhich will be there randomtextwhich will be there randomtextwhich will be there
-          randomtextwhich will be there randomtextwhich will be there</p>
-        <p>randomtextwhich will be there randomtextwhich will be there randomtextwhich will be there randomtextwhich
-          will
-          be there randomtextwhich will be there randomtextwhich will be there randomtextwhich will be there
-          randomtextwhich will be there randomtextwhich will be there</p>
-        <p>randomtextwhich will be there randomtextwhich will be there randomtextwhich will be there randomtextwhich
-          will
-          be there randomtextwhich will be there randomtextwhich will be there randomtextwhich will be there
-          randomtextwhich will be there randomtextwhich will be there</p>
-        <p>randomtextwhich will be there randomtextwhich will be there randomtextwhich will be there randomtextwhich
-          will
-          be there randomtextwhich will be there randomtextwhich will be there randomtextwhich will be there
-          randomtextwhich will be there randomtextwhich will be there</p>
-        <p>randomtextwhich will be there randomtextwhich will be there randomtextwhich will be there randomtextwhich
-          will
-          be there randomtextwhich will be there randomtextwhich will be there randomtextwhich will be there
-          randomtextwhich will be there randomtextwhich will be there</p>
-        <p>randomtextwhich will be there randomtextwhich will be there randomtextwhich will be there randomtextwhich
-          will
-          be there randomtextwhich will be there randomtextwhich will be there randomtextwhich will be there
-          randomtextwhich will be there randomtextwhich will be there</p>
-        <p>randomtextwhich will be there randomtextwhich will be there randomtextwhich will be there randomtextwhich
-          will
-          be there randomtextwhich will be there randomtextwhich will be there randomtextwhich will be there
-          randomtextwhich will be there randomtextwhich will be there</p>
-      </div>
-    </div>
-
-    <!-- <footer>
+      <!-- <footer>
 
   </footer> -->
-
-  </div>
-
-</body>
+    </div>
+  </body>
+</html>

@@ -1,17 +1,15 @@
-
-// --------------------------------------------------------------------------------
+// ===========================================================================
 /// <summary>
 /// page.tsx
 /// next-app
 /// created by Mehrdad Soleimanimajd on 29.05.2023
 /// </summary>
 /// <created>ʆϒʅ, 29.05.2023</created>
-/// <changed>ʆϒʅ, 31.05.2023</changed>
-// --------------------------------------------------------------------------------
+/// <changed>ʆϒʅ, 03.07.2023</changed>
+// ===========================================================================
 
-
-import Image from 'next/image'
-import styles from './page.module.css'
+import Image from "next/image";
+import styles from "./page.module.css";
 
 export default function Home() {
   return (
@@ -27,7 +25,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            By{' '}
+            By{" "}
             <Image
               src="/vercel.svg"
               alt="Vercel Logo"
@@ -103,5 +101,5 @@ export default function Home() {
         </a>
       </div>
     </main>
-  )
+  );
 }

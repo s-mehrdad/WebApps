@@ -1,391 +1,443 @@
-
-<!-- --------------------------------------------------------------------------------
+<!-- =========================================================================
 /// <summary>
 /// web.html
 /// HTML (modified from old works)
 /// created by Mehrdad Soleimanimajd on 13.05.2022
 /// </summary>
 /// <created>ʆϒʅ, 13.05.2022</created>
-/// <changed>ʆϒʅ, 17.04.2023</changed>
- -------------------------------------------------------------------------------- -->
-
+/// <changed>ʆϒʅ, 03.07.2023</changed>
+========================================================================== -->
 
 <!DOCTYPE html>
 <!--Declaration-->
 
 <html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Web</title>
 
-<head>
-  <title>Web</title>
+    <base href="" target="_self" />
 
-  <base href="" target="_self" />
-
-  <!--[if IE --]>
+    <!--[if IE --]>
       <link href="#" rel="stylesheet" />
       ... more HTML ...
-      <![endif]-->
-  <!--note: above is a conditional comment-->
+    <![endif]-->
+    <!--note: above is a conditional comment-->
 
-  <link rel="stylesheet" type="text/css" href="web.css" />
-  <!--external style sheet (lowest priority)
+    <link rel="stylesheet" type="text/css" href="web.css" />
+    <!--external style sheet (lowest priority)
       if placed after internal, will override its priority.
       link tag to connect to external resource-->
 
-  <script src="web.js"></script>
-  <script src="web_worker.js"></script>
-  <!--link to external JavaScript-->
+    <script src="web.js"></script>
+    <script src="web_worker.js"></script>
+    <!--link to external JavaScript-->
 
-  <script>
-  <!--
-    function msg() { alert("WebApps!") } // JS comment
-    -->
-  </script>
-  <!--Note: confronting old browsers: above script will be commented out.-->
+    <script>
+      <!-
+        function msg() { alert("WebApps!") } // JS comment
+         ->
+    </script>
+    <!--Note: confronting old browsers: above script will be commented out.-->
 
-  <style type="text/css">
-    body {
-      background-color: #2faafdef
-    }
-  </style>
-  <!--internal style sheet-->
+    <style type="text/css">
+      body {
+        background-color: #2faafdef;
+      }
+    </style>
+    <!--internal style sheet-->
 
-  <meta title="Web" />
-  <meta name="description" content="web application" />
-  <meta name="keywords" content="HTML,CSS,XHTML,JavaScript,XML" />
-  <meta name="author" content="Mehrdad Soleimanimajd" />
-  <meta lang="en" translate="yes" charset="utf-8" />
-  <meta http-equiv="180" /><!--refresh every 180 sec-->
-  <!--provided information for web engines-->
+    <meta title="Web" />
+    <meta name="description" content="web application" />
+    <meta name="keywords" content="HTML,CSS,XHTML,JavaScript,XML" />
+    <meta name="author" content="Mehrdad Soleimanimajd" />
+    <meta lang="en" translate="yes" charset="utf-8" />
+    <meta http-equiv="180" />
+    <!--refresh every 180 sec-->
+    <!--provided information for web engines-->
+  </head>
 
-</head>
-
-
-<!--Important notes:-->
-<!-- Note: displaying HTML's reserved characters is a little bit tricky:
+  <!--Important notes:-->
+  <!-- Note: displaying HTML's reserved characters is a little bit tricky:
     http://www.w3schools.com/html/html_entities.asp
     http://www.w3schools.com/html/html_symbols.asp
     -->
 
-
-<body style="background-color:#ffffffff" onload="engine()" onscroll="scroll()">
-  <!--in-line style sheet (highest priority and over-ridable by !important;)
+  <body
+    style="background-color: #ffffffff"
+    onload="engine()"
+    onscroll="scroll()"
+  >
+    <!--in-line style sheet (highest priority and over-ridable by !important;)
       note: not a good practice, best practice is higher CSS specificity or equal one later in code.-->
 
+    <header>
+      <!--header of document or section in unlimited numbers-->
+      <h1 title="contain brief notes in source code">
+        A brief use of HTML, CSS, JavaScript
+      </h1>
+      <!--titles contain the tool tips-->
+      <a class="link-class" href="https://www.w3schools.com/" target="_blank"
+        >Link to Web development references</a
+      >
+      <!--if an address contains " use '-->
+      <p id="test"></p>
+    </header>
 
-  <header>
-    <!--header of document or section in unlimited numbers-->
-    <h1 title="contain brief notes in source code">A brief use of HTML, CSS, JavaScript</h1>
-    <!--titles contain the tool tips-->
-    <a class="link-class" href="https://www.w3schools.com/" target="_blank">Link to Web development references</a>
-    <!--if an address contains " use '-->
-    <p id="test"></p>
-  </header>
+    <nav>
+      <!--wrapped reference to content's navigation links-->
+      <ul id="menu-one" class="menu-nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Link to page One</a></li>
+        <li><a href="#">This will be a page Two</a></li>
+        <li>
+          <a
+            href="mailto:email@mail.com?cc=email@mail.com&bcc=email@mail.com&subject=WebApps&body=A%20MESSAGE%20TO%20YOU"
+            target="_top"
+            >Contact</a
+          ><!--%20 is for the paces between words-->
+        </li>
+      </ul>
 
+      <ul id="menu-two" class="menu-nav">
+        <li><a href="#">Link One</a><span></span></li>
+        <li class="has-sub">
+          <a href="#">Link Two</a><span></span>
+          <ul>
+            <li class="has-sub">
+              <a href="#">Sub One</a><span></span>
+              <ul>
+                <li><a href="#">One</a><span></span></li>
+                <li><a href="#">Two</a><span></span></li>
+              </ul>
+            </li>
+            <li class="has-sub">
+              <a href="#">Sub One</a><span></span>
+              <ul>
+                <li><a href="#">One1</a><span></span></li>
+                <li><a href="#">Two2</a><span></span></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#">Link Three</a><span></span></li>
+        <li><a href="#">Link Four</a><span></span></li>
+      </ul>
+    </nav>
 
-  <nav>
-    <!--wrapped reference to content's navigation links-->
-    <ul id="menu-one" class="menu-nav">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Link to page One</a></li>
-      <li><a href="#">This will be a page Two</a></li>
-      <li>
-        <a href="mailto:email@mail.com?cc=email@mail.com&bcc=email@mail.com&subject=WebApps&body=A%20MESSAGE%20TO%20YOU"
-           target="_top">Contact</a><!--%20 is for the paces between words-->
-      </li>
-    </ul>
-
-    <ul id="menu-two" class="menu-nav">
-      <li><a href="#">Link One</a><span></span></li>
-      <li class="has-sub">
-        <a href="#">Link Two</a><span></span>
-        <ul>
-          <li class="has-sub">
-            <a href="#">Sub One</a><span></span>
-            <ul>
-              <li><a href="#">One</a><span></span></li>
-              <li><a href="#">Two</a><span></span></li>
-            </ul>
-          </li>
-          <li class="has-sub">
-            <a href="#">Sub One</a><span></span>
-            <ul>
-              <li><a href="#">One1</a><span></span></li>
-              <li><a href="#">Two2</a><span></span></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li><a href="#">Link Three</a><span></span></li>
-      <li><a href="#">Link Four</a><span></span></li>
-    </ul>
-  </nav>
-
-
-  <aside>
-    <!--wrapped sided reference to content's navigation links-->
-    <div id="menu-three">
-      <label tabindex="1" class="checkbox-nest">
-        <input type="checkbox" />
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <label class="menu-side">
-          <a href="#first-section">section One</a><br />
-          <a href="#second-section">section Two</a><br />
-          <a href="#third-section">section Three</a><br />
-          <a href="#forth-section">section Forth</a><br />
-          <a href="#">Login</a>
+    <aside>
+      <!--wrapped sided reference to content's navigation links-->
+      <div id="menu-three">
+        <label tabindex="1" class="checkbox-nest">
+          <input type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <label class="menu-side">
+            <a href="#first-section">section One</a><br />
+            <a href="#second-section">section Two</a><br />
+            <a href="#third-section">section Three</a><br />
+            <a href="#forth-section">section Forth</a><br />
+            <a href="#">Login</a>
+          </label>
         </label>
-      </label>
-    </div>
-  </aside>
-
-
-  <div class="content">
-
-    <div id="interact">
-
-      <div>
-        <a href="#">
-          <section id="first-section">
-            <!--thematic headings to group content-->
-            Text tags
-          </section>
-        </a>
-        <label id="moreItems">
-          <input type="checkbox" value="check" />
-          <span></span><span></span><span></span><span></span>
-        </label>
-
-        <article>
-          <!--self contained contents like posts-->
-          <p>
-            If <b>there (bold tag)</b> raises
-            a <em>need (emphasize tag)</em>
-            this <i>document (italic tag)</i>
-            <code>contain (code tag)</code>
-            brief <strong>notes (strong tag)</strong>
-            in <sub>source (subscript tag)</sub>
-            code <sup>and (superscript tag)</sup>
-            comments as <small>documentation! (small tag)</small>
-          </p>
-          <p id="JavaScript">
-            This is to be changed!
-            <input type="button" name="styleButton" onclick="changeStyle()" value="Click me!" />
-          </p>
-        </article>
-        <details><p>details</p></details>
       </div>
-      
-      <video src="screenshots/ScreenRecording-2023-04-10-at-4-03-23-PM.mov" type="video/mov" width="640" height="1024" preload autoplay muted>Video is not supported!</video>
+    </aside>
 
-      <div>
-        <a href="#">
-          <section id="second-section">
-            Table of tags
-          </section>
-        </a>
-        <label id="moreItems">
-          <input type="checkbox" value="check" />
-          <span></span><span></span><span></span><span></span>
-        </label>
+    <div class="content">
+      <div id="interact">
+        <div>
+          <a href="#">
+            <section id="first-section">
+              <!--thematic headings to group content-->
+              Text tags
+            </section>
+          </a>
+          <label id="moreItems">
+            <input type="checkbox" value="check" />
+            <span></span><span></span><span></span><span></span>
+          </label>
 
-        <article class="table-face">
-          <table>
-            <caption>table's face</caption>
-            <colgroup>
-              <col span="1" class="column-face" />
-              <col span="2" />
-            </colgroup>
-            <!--columns are grouped for formatting and its tag precedes table's header-->
-            <thead>
-              <!--table header section-->
-              <tr>
-                <th colspan="3">this is a horizontal header</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!--body of table-->
-              <tr>
-                <td>insert tag</td>
-                <td colspan="2"><ins>the tag's usage</ins></td>
-              </tr>
-              <tr>
-                <td>deleted tag</td>
-                <td colspan="2"><del>the tag's usage</del></td>
-              </tr>
-              <tr>
-                <td>marked tag</td>
-                <td colspan="2"><mark>the tag's usage</mark></td>
-              </tr>
-              <tr>
-                <td>keyboard tag</td>
-                <td colspan="2"><kbd>the tag's usage</kbd></td>
-              </tr>
-              <tr>
-                <td>sample code tag</td>
-                <td colspan="2"><smp>the tag's usage</smp></td>
-              </tr>
-              <tr>
-                <td>variable tag</td>
-                <td colspan="2"><var>the tag's usage</var></td>
-              </tr>
-              <tr>
-                <td>pre-formatted tag</td>
-                <td colspan="2"><pre>the tag's usage</pre></td>
-              </tr>
-              <tr>
-                <td>abbreviation tag</td>
-                <td colspan="2"><abbr>the tag's usage</abbr></td>
-              </tr>
-              <tr>
-                <td>address tag</td>
-                <td colspan="2"><address>the tag's usage</address></td>
-              </tr>
-              <tr>
-                <td>text direction tag</td>
-                <td colspan="2"><bdo>the tag's usage</bdo></td>
-              </tr>
-              <tr>
-                <td>block quote tag</td>
-                <td colspan="2"><blockquote>the tag's usage</blockquote></td>
-              </tr>
-              <tr>
-                <td>short quotation tag</td>
-                <td colspan="2"><q>the tag's usage</q></td>
-              </tr>
-              <tr>
-                <td>work title tag</td>
-                <td colspan="2"><cite>the tag's usage</cite></td>
-              </tr>
-              <tr>
-                <td>definition term tag</td>
-                <td colspan="2"><dfn>the tag's usage</dfn></td>
-              </tr>
-            </tbody>
-            <tfoot>
-              <!--table footer divider-->
-              <tr>
-                <td colspan="3">three for table's' footer</td>
-              </tr>
-            </tfoot>
-          </table>
-          <!--Note: when printing large tables, table's sections provide header and footer on all pages.-->
-        </article>
-        <details><p>details</p></details>
-      </div>
-
-      <div>
-        <a href="#">
-          <!-- TODO interaction extension to swipe -->
-          <section id="third-section">
-            Interact: swipe, read and delete
-          </section>
           <article>
-            Here comes some text to be tested...
+            <!--self contained contents like posts-->
+            <p>
+              If <b>there (bold tag)</b> raises a
+              <em>need (emphasize tag)</em> this <i>document (italic tag)</i>
+              <code>contain (code tag)</code>
+              brief <strong>notes (strong tag)</strong> in
+              <sub>source (subscript tag)</sub> code
+              <sup>and (superscript tag)</sup> comments as
+              <small>documentation! (small tag)</small>
+            </p>
+            <p id="JavaScript">
+              This is to be changed!
+              <input
+                type="button"
+                name="styleButton"
+                onclick="changeStyle()"
+                value="Click me!"
+              />
+            </p>
           </article>
-          <details><p>details</p></details>
-        </a>
+          <details>
+            <p>details</p>
+          </details>
+        </div>
 
-        <label id="moreItems">
-          <input type="checkbox" value="check" />
-          <span></span><span></span><span></span><span></span>
-        </label>
+        <video
+          src="screenshots/ScreenRecording-2023-04-10-at-4-03-23-PM.mov"
+          type="video/mov"
+          width="640"
+          height="1024"
+          preload
+          autoplay
+          muted
+        >
+          Video is not supported!
+        </video>
+
+        <div>
+          <a href="#">
+            <section id="second-section">Table of tags</section>
+          </a>
+          <label id="moreItems">
+            <input type="checkbox" value="check" />
+            <span></span><span></span><span></span><span></span>
+          </label>
+
+          <article class="table-face">
+            <table>
+              <caption>
+                table's face
+              </caption>
+              <colgroup>
+                <col span="1" class="column-face" />
+                <col span="2" />
+              </colgroup>
+              <!--columns are grouped for formatting and its tag precedes table's header-->
+              <thead>
+                <!--table header section-->
+                <tr>
+                  <th colspan="3">this is a horizontal header</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!--body of table-->
+                <tr>
+                  <td>insert tag</td>
+                  <td colspan="2"><ins>the tag's usage</ins></td>
+                </tr>
+                <tr>
+                  <td>deleted tag</td>
+                  <td colspan="2"><del>the tag's usage</del></td>
+                </tr>
+                <tr>
+                  <td>marked tag</td>
+                  <td colspan="2"><mark>the tag's usage</mark></td>
+                </tr>
+                <tr>
+                  <td>keyboard tag</td>
+                  <td colspan="2"><kbd>the tag's usage</kbd></td>
+                </tr>
+                <tr>
+                  <td>sample code tag</td>
+                  <td colspan="2">
+                    <smp>the tag's usage</smp>
+                  </td>
+                </tr>
+                <tr>
+                  <td>variable tag</td>
+                  <td colspan="2"><var>the tag's usage</var></td>
+                </tr>
+                <tr>
+                  <td>pre-formatted tag</td>
+                  <td colspan="2">
+                    <pre>the tag's usage</pre>
+                  </td>
+                </tr>
+                <tr>
+                  <td>abbreviation tag</td>
+                  <td colspan="2"><abbr>the tag's usage</abbr></td>
+                </tr>
+                <tr>
+                  <td>address tag</td>
+                  <td colspan="2">
+                    <address>the tag's usage</address>
+                  </td>
+                </tr>
+                <tr>
+                  <td>text direction tag</td>
+                  <td colspan="2"><bdo>the tag's usage</bdo></td>
+                </tr>
+                <tr>
+                  <td>block quote tag</td>
+                  <td colspan="2">
+                    <blockquote>the tag's usage</blockquote>
+                  </td>
+                </tr>
+                <tr>
+                  <td>short quotation tag</td>
+                  <td colspan="2"><q>the tag's usage</q></td>
+                </tr>
+                <tr>
+                  <td>work title tag</td>
+                  <td colspan="2"><cite>the tag's usage</cite></td>
+                </tr>
+                <tr>
+                  <td>definition term tag</td>
+                  <td colspan="2"><dfn>the tag's usage</dfn></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <!--table footer divider-->
+                <tr>
+                  <td colspan="3">three for table's' footer</td>
+                </tr>
+              </tfoot>
+            </table>
+            <!--Note: when printing large tables, table's sections provide header and footer on all pages.-->
+          </article>
+          <details>
+            <p>details</p>
+          </details>
+        </div>
+
+        <div>
+          <a href="#">
+            <!-- TODO interaction extension to swipe -->
+            <section id="third-section">
+              Interact: swipe, read and delete
+            </section>
+            <article>Here comes some text to be tested...</article>
+            <details>
+              <p>details</p>
+            </details>
+          </a>
+
+          <label id="moreItems">
+            <input type="checkbox" value="check" />
+            <span></span><span></span><span></span><span></span>
+          </label>
+        </div>
+
+        <div>
+          <a href="#">
+            <section id="forth-section">Forth Section</section>
+          </a>
+          <label id="moreItems">
+            <input type="checkbox" value="check" />
+            <span></span><span></span><span></span><span></span>
+          </label>
+
+          <article></article>
+          <details>
+            <p>details</p>
+          </details>
+        </div>
       </div>
 
-      <div>
-        <a href="#">
-          <section id="forth-section">
-            Forth Section
-          </section>
-        </a>
-        <label id="moreItems">
-          <input type="checkbox" value="check" />
-          <span></span><span></span><span></span><span></span>
-        </label>
+      <summury>
+        <p>Web Apps are fun and interesting!</p>
+      </summury>
 
-        <article>
-        </article>
-        <details><p>details</p></details>
-      </div>
-
+      <h2>--------Some other Header--------</h2>
     </div>
 
-    <summury><p>Web Apps are fun and interesting!</p></summury>
-
-
-    <h2>--------Some other Header--------</h2>
-
-  </div>
-
-
-  <footer>
-    <svg xmlns="http://www.w3.org/2000/svg">
-      <ellipse id="bubble1" cx="0" cy="100" rx="20" ry="20" r="10">
-        <animate attributeName="cx" dur="3s"
-                 values="-30; 0; 30; 0; -30;" repeatCount="indefinite" />
-        <animate attributeName="cy" dur="6s"
-                 values="180; 110; 70; 30; 0;" repeatCount="indefinite" />
-      </ellipse>
-      <ellipse id="bubble2" cx="0" cy="100" rx="18" ry="18" r="10">
-        <animate attributeName="cx" dur="3s"
-                 values="-35; 0; 35; 0; -35;" repeatCount="indefinite" />
-        <animate attributeName="cy" dur="7s"
-                 values="180; 130; 100; 90; 20;" repeatCount="indefinite" />
-      </ellipse>
-      <ellipse id="bubble3" cx="0" cy="100" rx="16" ry="16" r="10">
-        <animate attributeName="cx" dur="5s"
-                 values="-40; 0; 40; 0; -40;" repeatCount="indefinite" />
-        <animate attributeName="cy" dur="8s"
-                 values="180; 160; 90; 40; 0;" repeatCount="indefinite" />
-      </ellipse>
-      <ellipse id="bubble4" cx="0" cy="100" rx="14" ry="14" r="10">
-        <animate attributeName="cx" dur="3s"
-                 values="-45; 0; 45; 0; -45;" repeatCount="indefinite" />
-        <animate attributeName="cy" dur="9s"
-                 values="180; 120; 100; 50; 20;" repeatCount="indefinite" />
-      </ellipse>
-      <use xlink:href="#bubble1" transform="translate(50,14)" />
-      <use xlink:href="#bubble1" transform="translate(80,68)" />
-      <use xlink:href="#bubble1" transform="translate(240,53)" />
-      <use xlink:href="#bubble1" transform="translate(190,22)" />
-      <use xlink:href="#bubble1" transform="translate(230,88)" />
-      <use xlink:href="#bubble1" transform="translate(320,35)" />
-      <use xlink:href="#bubble1" transform="translate(370,92)" />
-      <use xlink:href="#bubble1" transform="translate(400,36)" />
-      <use xlink:href="#bubble2" transform="translate(280,43)" />
-      <use xlink:href="#bubble2" transform="translate(130,31)" />
-      <use xlink:href="#bubble2" transform="translate(54,86)" />
-      <use xlink:href="#bubble2" transform="translate(240,34)" />
-      <use xlink:href="#bubble2" transform="translate(290,13)" />
-      <use xlink:href="#bubble2" transform="translate(27,24)" />
-      <use xlink:href="#bubble2" transform="translate(327,95)" />
-      <use xlink:href="#bubble2" transform="translate(227,13)" />
-      <use xlink:href="#bubble3" transform="translate(330,60)" />
-      <use xlink:href="#bubble3" transform="translate(390,75)" />
-      <use xlink:href="#bubble3" transform="translate(290,91)" />
-      <use xlink:href="#bubble3" transform="translate(200,17)" />
-      <use xlink:href="#bubble3" transform="translate(110,27)" />
-      <use xlink:href="#bubble3" transform="translate(100,42)" />
-      <use xlink:href="#bubble3" transform="translate(385,84)" />
-      <use xlink:href="#bubble3" transform="translate(450,17)" />
-      <use xlink:href="#bubble4" transform="translate(130,42)" />
-      <use xlink:href="#bubble4" transform="translate(390,77)" />
-      <use xlink:href="#bubble4" transform="translate(290,52)" />
-      <use xlink:href="#bubble4" transform="translate(450,27)" />
-      <use xlink:href="#bubble4" transform="translate(410,64)" />
-      <use xlink:href="#bubble4" transform="translate(100,43)" />
-      <use xlink:href="#bubble4" transform="translate(85,87)" />
-      <use xlink:href="#bubble4" transform="translate(250,94)" />
-    </svg>
-    <div>&copy; All rights are reserved</div>
-  </footer>
-  <!--footer of document or section in unlimited numbers-->
-
-
-</body>
-
+    <footer>
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <ellipse id="bubble1" cx="0" cy="100" rx="20" ry="20" r="10">
+          <animate
+            attributeName="cx"
+            dur="3s"
+            values="-30; 0; 30; 0; -30;"
+            repeatCount="indefinite"
+          />
+          <animate
+            attributeName="cy"
+            dur="6s"
+            values="180; 110; 70; 30; 0;"
+            repeatCount="indefinite"
+          />
+        </ellipse>
+        <ellipse id="bubble2" cx="0" cy="100" rx="18" ry="18" r="10">
+          <animate
+            attributeName="cx"
+            dur="3s"
+            values="-35; 0; 35; 0; -35;"
+            repeatCount="indefinite"
+          />
+          <animate
+            attributeName="cy"
+            dur="7s"
+            values="180; 130; 100; 90; 20;"
+            repeatCount="indefinite"
+          />
+        </ellipse>
+        <ellipse id="bubble3" cx="0" cy="100" rx="16" ry="16" r="10">
+          <animate
+            attributeName="cx"
+            dur="5s"
+            values="-40; 0; 40; 0; -40;"
+            repeatCount="indefinite"
+          />
+          <animate
+            attributeName="cy"
+            dur="8s"
+            values="180; 160; 90; 40; 0;"
+            repeatCount="indefinite"
+          />
+        </ellipse>
+        <ellipse id="bubble4" cx="0" cy="100" rx="14" ry="14" r="10">
+          <animate
+            attributeName="cx"
+            dur="3s"
+            values="-45; 0; 45; 0; -45;"
+            repeatCount="indefinite"
+          />
+          <animate
+            attributeName="cy"
+            dur="9s"
+            values="180; 120; 100; 50; 20;"
+            repeatCount="indefinite"
+          />
+        </ellipse>
+        <use xlink:href="#bubble1" transform="translate(50,14)" />
+        <use xlink:href="#bubble1" transform="translate(80,68)" />
+        <use xlink:href="#bubble1" transform="translate(240,53)" />
+        <use xlink:href="#bubble1" transform="translate(190,22)" />
+        <use xlink:href="#bubble1" transform="translate(230,88)" />
+        <use xlink:href="#bubble1" transform="translate(320,35)" />
+        <use xlink:href="#bubble1" transform="translate(370,92)" />
+        <use xlink:href="#bubble1" transform="translate(400,36)" />
+        <use xlink:href="#bubble2" transform="translate(280,43)" />
+        <use xlink:href="#bubble2" transform="translate(130,31)" />
+        <use xlink:href="#bubble2" transform="translate(54,86)" />
+        <use xlink:href="#bubble2" transform="translate(240,34)" />
+        <use xlink:href="#bubble2" transform="translate(290,13)" />
+        <use xlink:href="#bubble2" transform="translate(27,24)" />
+        <use xlink:href="#bubble2" transform="translate(327,95)" />
+        <use xlink:href="#bubble2" transform="translate(227,13)" />
+        <use xlink:href="#bubble3" transform="translate(330,60)" />
+        <use xlink:href="#bubble3" transform="translate(390,75)" />
+        <use xlink:href="#bubble3" transform="translate(290,91)" />
+        <use xlink:href="#bubble3" transform="translate(200,17)" />
+        <use xlink:href="#bubble3" transform="translate(110,27)" />
+        <use xlink:href="#bubble3" transform="translate(100,42)" />
+        <use xlink:href="#bubble3" transform="translate(385,84)" />
+        <use xlink:href="#bubble3" transform="translate(450,17)" />
+        <use xlink:href="#bubble4" transform="translate(130,42)" />
+        <use xlink:href="#bubble4" transform="translate(390,77)" />
+        <use xlink:href="#bubble4" transform="translate(290,52)" />
+        <use xlink:href="#bubble4" transform="translate(450,27)" />
+        <use xlink:href="#bubble4" transform="translate(410,64)" />
+        <use xlink:href="#bubble4" transform="translate(100,43)" />
+        <use xlink:href="#bubble4" transform="translate(85,87)" />
+        <use xlink:href="#bubble4" transform="translate(250,94)" />
+      </svg>
+      <div>&copy; All rights are reserved</div>
+    </footer>
+    <!--footer of document or section in unlimited numbers-->
+  </body>
 </html>

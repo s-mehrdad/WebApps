@@ -1,25 +1,23 @@
-
-/* --------------------------------------------------------------------------------
+/* ===========================================================================
 /// <summary>
 /// index.css
 /// ReactApp
 /// created by Mehrdad Soleimanimajd on 26.03.2023
 /// </summary>
 /// <created>ʆϒʅ, 26.03.2023</created>
-/// <changed>ʆϒʅ, 27.03.2023</changed>
- -------------------------------------------------------------------------------- */
-
+/// <changed>ʆϒʅ, 03.07.2023</changed>
+=========================================================================== */
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }

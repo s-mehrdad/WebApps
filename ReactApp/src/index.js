@@ -1,28 +1,24 @@
-
-// --------------------------------------------------------------------------------
+// ===========================================================================
 /// <summary>
 /// index.js
 /// ReactApp
 /// created by Mehrdad Soleimanimajd on 26.03.2023
 /// </summary>
 /// <created>ʆϒʅ, 26.03.2023</created>
-/// <changed>ʆϒʅ, 03.04.2023</changed>
-// --------------------------------------------------------------------------------
+/// <changed>ʆϒʅ, 03.07.2023</changed>
+// ===========================================================================
 
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-
-<React.StrictMode>
+  <React.StrictMode>
     <App />
   </React.StrictMode>
-
 );
 reportWebVitals(console.log);
 

@@ -1,18 +1,16 @@
-
-/* --------------------------------------------------------------------------------
+/* ===========================================================================
 /// <summary>
 /// web.css
 /// CSS (modified from old works)
 /// created by Mehrdad Soleimanimajd on 13.05.2022
 /// </summary>
 /// <created>ʆϒʅ, 13.05.2022</created>
-/// <changed>ʆϒʅ, 04.04.2023</changed>
- --------------------------------------------------------------------------------*/
-
+/// <changed>ʆϒʅ, 03.07.2023</changed>
+=========================================================================== */
 
 @media only screen and (max-width: 1024px) and (max-height: 768px) {
   p {
-    font-family: 'Segoe UI', Verdana, Arial;
+    font-family: "Segoe UI", Verdana, Arial;
     /*fallback system starts at wished font and end with a generic font family*/
     font-size: inherit;
   }
@@ -22,26 +20,23 @@
 a research on media type before use is advised.*/
 @media only print {
   p {
-    font-family: 'Segoe UI', Verdana, Arial;
+    font-family: "Segoe UI", Verdana, Arial;
     font-size: inherit;
     color: black;
   }
 }
 
-
 body {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   padding: 0%;
   margin: 0%;
 }
 
 /*Note: Cross browsers: predefined margin and padding to avoid visual differences*/
 
-
 header {
   overflow: hidden;
 }
-
 
 a {
   text-align: left;
@@ -55,14 +50,13 @@ a {
 /*CSS selectors are element, class and id selectors*/
 /*a custom identifier for selectors never starts with numbers*/
 
-
 a.link-class {
   font-size: 1.2em;
   /*em size unit is recommended by W3C, encouraging pixels/16=em formula*/
   font-style: oblique;
   font-weight: bolder;
   letter-spacing: 2px;
-  color: #8000FF
+  color: #8000ff;
 }
 
 .link-class {
@@ -85,18 +79,15 @@ a.link-class:active {
 
 /*pseudo classes usage*/
 
-
 h1 {
   overflow: hidden;
 }
-
 
 header,
 .content {
   margin: 1%;
   padding: 3%;
 }
-
 
 p {
   text-align: left;
@@ -105,35 +96,32 @@ p {
   padding: 10px;
 }
 
-
 /*more CSS selectors: CSS Combinators*/
 div p {
   /*background-color: blue;*/
 }
 
 /*CSS descendant: select all <p> elements inside of*/
-div~p {
+div ~ p {
   /*background-color: blueviolet;*/
 }
 
 /*CSS general sibling: select all <p> siblings of*/
-div>p {
+div > p {
   /*background-color: brown;*/
 }
 
 /*CSS child selector: select all <p> elements that are immediate children of*/
-div+p {
+div + p {
   /*background-color: firebrick;*/
 }
 
 /*CSS adjacent sibling: select all <p> placed immediately after of*/
 
-
 nav {
   margin: 0%;
   padding: 0%;
 }
-
 
 ul.menu-nav,
 ul.menu-nav ul {
@@ -187,10 +175,9 @@ ul.menu-nav .has-sub ul .has-sub li {
   float: left;
 }
 
-
-#menu-one>li>a:hover::after,
-#menu-one>li>a:focus::after {
-  content: '';
+#menu-one > li > a:hover::after,
+#menu-one > li > a:focus::after {
+  content: "";
   display: block;
   /*adjustable as blocks*/
   left: 50%;
@@ -211,13 +198,11 @@ ul.menu-nav .has-sub ul .has-sub li {
   z-index: 1;
 }
 
-
-.stickTop+.menu-nav {
+.stickTop + .menu-nav {
   margin-top: 80px;
 }
 
-
-#menu-two>li:hover {
+#menu-two > li:hover {
   border-right: 5px solid #007bff;
   text-shadow: 1px 2px 2px red;
 }
@@ -236,9 +221,8 @@ ul.menu-nav .has-sub ul .has-sub li {
   display: block;
 }
 
-
-#menu-two>li>a:hover~span,
-#menu-two>li>a:focus~span {
+#menu-two > li > a:hover ~ span,
+#menu-two > li > a:focus ~ span {
   display: block;
   position: relative;
   left: 10px;
@@ -247,9 +231,8 @@ ul.menu-nav .has-sub ul .has-sub li {
   height: 10px;
   border-radius: 10px;
   transform: scaleX(3);
-  transition: 0.3s cubic-bezier(.3, .2, .5, .8);
+  transition: 0.3s cubic-bezier(0.3, 0.2, 0.5, 0.8);
 }
-
 
 aside {
   /*position: fixed;
@@ -268,7 +251,7 @@ label.menu-side {
   display: none;
   /*float: left;*/
   /*arrange one after another and same size*/
-  background-color: #1063DF;
+  background-color: #1063df;
   height: 0px;
   width: auto;
   overflow: hidden;
@@ -276,17 +259,15 @@ label.menu-side {
   cursor: pointer;
 }
 
-label.menu-side>a {
+label.menu-side > a {
   padding: 5px;
   height: 20px;
   color: #ffffff;
 }
 
-
 #menu-three input {
   display: none;
 }
-
 
 #menu-three span {
   display: block;
@@ -306,44 +287,40 @@ label.menu-side>a {
   transform: translateX(70px);
 }
 
-
-#menu-three input:checked~span {
+#menu-three input:checked ~ span {
   width: 45px;
   transition-duration: 2s;
 }
 
-#menu-three input:checked~span:nth-child(6) {
+#menu-three input:checked ~ span:nth-child(6) {
   width: 35px;
   transition-duration: 2s;
 }
 
-#menu-three input:checked~span:nth-child(7) {
+#menu-three input:checked ~ span:nth-child(7) {
   width: 35px;
   transition-duration: 2s;
 }
 
-#menu-three input:checked~span:nth-child(2) {
+#menu-three input:checked ~ span:nth-child(2) {
   width: 5px;
   height: 10px;
   transform: translate(70px, 70px);
   transition-duration: 2s;
 }
 
-
-#menu-three input:checked~label.menu-side {
+#menu-three input:checked ~ label.menu-side {
   display: inline;
   /*arrange one after another and different size*/
   height: 400px;
   transition-property: all;
 }
 
-
 #menu-three a:hover,
 #menu-three a:focus {
   color: red;
   transition-duration: 1s;
 }
-
 
 #interact {
   display: grid;
@@ -357,7 +334,6 @@ label.menu-side>a {
   padding: 3px;
   font-weight: bolder;
 }
-
 
 #interact div {
   display: block;
@@ -416,11 +392,9 @@ label.menu-side>a {
   /*float affects the latter elements so clearance after float usage*/
 }
 
-
-#interact div input:checked~span {
+#interact div input:checked ~ span {
   background-color: #b200ff;
 }
-
 
 #first-section p:first-letter {
   float: left;
@@ -431,7 +405,6 @@ label.menu-side>a {
   text-decoration: underline;
   letter-spacing: 5px;
 }
-
 
 table,
 caption,
@@ -457,20 +430,19 @@ tfoot {
   background-color: cornflowerblue;
 }
 
-.table-face {}
-
+.table-face {
+}
 
 .column-face {
   background-color: crimson;
 }
-
 
 footer {
   text-align: center;
   align-content: center;
 }
 
-footer>div {
+footer > div {
   padding-bottom: 40px;
   animation-name: animated;
   animation-duration: 2s;
@@ -514,7 +486,8 @@ footer>div {
   }
 }
 
-@-moz-keyframes animated {}
+@-moz-keyframes animated {
+}
 
 @-webkit-keyframes animated {
   0% {

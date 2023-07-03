@@ -1,5 +1,16 @@
+/* ===========================================================================
+/// <summary>
+/// TM_FILENAME
+/// project
+/// created by Mehrdad Soleimanimajd on 04.04.2023
+/// </summary>
+/// <created>ʆϒʅ, 04.04.2023</created>
+/// <changed>ʆϒʅ, 03.07.2023</changed>
+=========================================================================== */
 
-.App, p, body {
-    font-size: 50px;
-    align-items: center;
+.App,
+p,
+body {
+  font-size: 50px;
+  align-items: center;
 }

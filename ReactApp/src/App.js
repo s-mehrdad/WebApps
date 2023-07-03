@@ -1,17 +1,15 @@
-
-// --------------------------------------------------------------------------------
+// ===========================================================================
 /// <summary>
 /// App.js
 /// ReactApp
 /// created by Mehrdad Soleimanimajd on 26.03.2023
 /// </summary>
 /// <created>ʆϒʅ, 26.03.2023</created>
-/// <changed>ʆϒʅ, 04.04.2023</changed>
-// --------------------------------------------------------------------------------
+/// <changed>ʆϒʅ, 03.07.2023</changed>
+// ===========================================================================
 
-
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
   return (
@@ -20,52 +18,43 @@ function App() {
         <NavButtons />
         <img src={logo} className="App-logo" alt="logo" />
       </nav>
-      <aside className="App-sidebar">
-
-      </aside>
+      <aside className="App-sidebar"></aside>
       <div className="App-content">
         <Article />
-
       </div>
-      <footer className="App-footer">
-
-      </footer>
+      <footer className="App-footer"></footer>
     </div>
   );
 }
-
 
 function Article() {
   return (
     <>
       <section>
-        <h3>
-          React App
-        </h3>
+        <h3>React App</h3>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
       </section>
       <article>
-        <a className="App-link"
+        <a
+          className="App-link"
           href="https://reactjs.org"
           target="_blank"
-          rel="noopener noreferrer" >
+          rel="noopener noreferrer"
+        >
           Learn React
         </a>
       </article>
       <details>
-        <h5>
-          React App details
-        </h5>
+        <h5>React App details</h5>
         <p>
           Edit <code>source</code> and save to reload.
         </p>
       </details>
     </>
-  )
+  );
 }
-
 
 function NavButtons() {
   let a = ["a", "b", "c", "d", "hello"];
@@ -75,7 +64,7 @@ function NavButtons() {
   //   columns.push(<button id={index} >AButton</button>)
   // }
   for (const item of a) {
-    columns.push(<button id={item}>{item} Button</button>)
+    columns.push(<button id={item}>{item} Button</button>);
   }
   // for (const item of a) {
   //   columns.push(<a id={item} href="https://google.com" target="_blank">{item} URL</a>)
