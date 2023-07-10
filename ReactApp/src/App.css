@@ -5,7 +5,7 @@
 /// created by Mehrdad Soleimanimajd on 26.03.2023
 /// </summary>
 /// <created>ʆϒʅ, 26.03.2023</created>
-/// <changed>ʆϒʅ, 03.07.2023</changed>
+/// <changed>ʆϒʅ, 10.07.2023</changed>
 =========================================================================== */
 
 .App {
@@ -34,7 +34,7 @@ button {
   border-radius: 10px;
 }
 
-.App-logo {
+.app-logo {
   float: right;
   height: 100%;
   margin-right: 5%;
@@ -42,12 +42,12 @@ button {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 2s alternate-reverse;
+  .app-logo {
+    animation: app-logo-spin infinite 2s alternate-reverse;
   }
 }
 
-@keyframes App-logo-spin {
+@keyframes app-logo-spin {
   from {
     transform: rotate(0deg);
   }
@@ -64,7 +64,7 @@ aside {
   background-color: #495264;
 }
 
-.App-content {
+.app-content {
   background-color: #495264;
   height: auto;
   display: flex;
@@ -75,7 +75,28 @@ aside {
   color: white;
 }
 
-.App-link {
+.app-table {
+  background-color: #495264;
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: hsla(62, 100%, 50%, 0.774);
+}
+
+.app-table td{
+  width:50px;
+  border: 1px solid #08bff77d;;
+}
+
+.notAvailable{
+color: rgba(255, 30, 0, 0.981)
+}
+
+.app-link {
   color: #61dafb;
 }
 
