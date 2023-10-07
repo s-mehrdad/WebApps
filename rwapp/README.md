@@ -1,5 +1,5 @@
 # Introduction 
-Next web application template bootstrapped from React Next framework.
+Web application build on React bare modules pack, simple, clear coded and documented.
 
 https://user-images.githubusercontent.com/43612903/234181113-ec3c999d-9bf9-42e1-b31f-7c39b420b6f8.mov
 
