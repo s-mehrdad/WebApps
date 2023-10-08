@@ -5,7 +5,7 @@
 /// created by Mehrdad Soleimanimajd on 26.03.2023
 /// </summary>
 /// <created>ʆϒʅ, 26.03.2023</created>
-/// <changed>ʆϒʅ, 10.07.2023</changed>
+/// <changed>ʆϒʅ, 08.10.2023</changed>
 // ===========================================================================
 
 import logo from "./logo.svg";
@@ -103,6 +103,7 @@ function ProductTableFilters({
     showStocked,
     onShowStock,
 }) {
+    console.log(showStocked);
     if (sortedAfter === "id") {
         products.sort((a, b) => a.id - b.id);
     }
@@ -129,7 +130,7 @@ function ProductTableFilters({
 
     return (
         <>
-            <label for="sort">
+            <label htmlFor="sort">
                 Sort based on {sortedAfter}
                 <select name="sort" id="sort" onChange={onUpdate}>
                     <option value="default">default</option>
