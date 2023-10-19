@@ -5,7 +5,7 @@
 /// created by Mehrdad Soleimanimajd on 11.05.2023
 /// </summary>
 /// <created>ʆϒʅ, 11.05.2023</created>
-/// <changed>ʆϒʅ, 08.10.2023</changed>
+/// <changed>ʆϒʅ, 19.10.2023</changed>
 // ===========================================================================
 
 var http = require("node:http");
@@ -15,36 +15,163 @@ const assertion = require("assert");
 var fs = require("fs");
 var path = require("node:path");
 const dt = require("./dt");
-const hostname = "127.0.0.1";
+
+const hostname = "localhost";
 var port = 3000;
+
 const process = require("node:process");
 const input = process.stdin;
 const output = process.stdout;
-const readline = require("readline").createInterface({ input, output });
 
-// var MongoClient = require('mongodb').MongoClient;
-// const mongoose = require('mongoose');
-// var uri = "mongodb://localhost:27017/mydb?directConnection=true&serverSelectionTimeoutMS=2000";
-// var uri = process.env.MONGO_URI;
-// var client = new MongoClient(uri);
+// const readline = require("readline").createInterface({ input, output });
 
-// const mysql = require('mysql');
-// const mysql = require("mysql2");
-// var db = mysql.createConnection({
-//   host: "127.0.0.1",
-//   port: "3306",
-//   user: "root",
-//   password: "n123N-password",
-//   database: "mydb",
-// });
+// process input ------------------------------------------------------
+const processInput = require("node:readline").createInterface({
+    input: input,
+    output: output,
+    // input,
+    // output,
+    prompt: "hello: ",
+});
+processInput.prompt();
+processInput.on("line", (inputtedLine) => {
+    console.log(inputtedLine);
+    processInput.prompt();
+});
+input.on("keypress", (pressedKey) => {
+    console.log(pressedKey);
+});
+processInput.on("close", () => {
+    console.log("have a good time!");
+    process.exit(0);
+});
+processInput.once("line", () => {
+    processInput.prompt();
+});
 
+// sql -----------------------------------------------------------------
 const mysql = require("@mysql/xdevapi");
+
+const connectionConfig = {
+    host: "localhost",
+    port: "33060",
+    user: "root",
+    password: "n123N-password",
+    // schema: "nodeJsSchema",
+};
+const schemaConfig = {
+    schema: "nodeJsSchema",
+    collection: "nodeJsCollection",
+    user: "root",
+};
+
+// sql, schema and collection --------------------------------------------
 var db = mysql
-    .getSession("mysql://root:n123N-password@localhost:33060")
+    // .getSession("mysql://root:n123N-password@localhost:33060")
+    .getSession(connectionConfig)
     .then((session) => {
         console.log(session.inspect());
+        const njSchema = session.getSchema(schemaConfig.schema);
+        njSchema
+            .existsInDatabase()
+
+            .then((exists) => {
+                // exists ? { return njSchema; } : session.createSchema('nodeJsSchema');
+                if (exists == true) {
+                    return njSchema;
+                }
+
+                return session.createSchema(schemaConfig.schema);
+            })
+
+            .then((schema) => {
+                return schema.createCollection(schemaConfig.collection, {
+                    reuseExisting: true,
+                });
+            })
+
+            .then((collection) => {
+                return (
+                    collection
+                        .add([
+                            { name: "cards", numberOf: 3 },
+                            { name: "asides", numberOf: 3 },
+                        ])
+                        .execute()
+
+                        .then(() => {
+                            return collection
+                                .find()
+                                .fields("name", "numberOf")
+                                .execute();
+                        })
+
+                        .then((response) => {
+                            console.log(response.toArray());
+                        })
+                        // .then(() => {
+                        //     njSchema.dropCollection(schemaConfig.collection);
+                        // })
+                        // .then(() => {
+                        //     session.dropSchema(schemaConfig.schema);
+                        // })
+                        .then(() => {
+                            session.close();
+                        })
+                );
+            });
     });
 
+// sql, database and table --------------------------------------------    
+const databaseConfig = {
+    database: "nodeJsDatabase",
+    table: "nodeJsTable",
+    user: "root",
+};
+
+var njDatabase = mysql.getSession(connectionConfig).then((session) => {
+    console.log(session.inspect());
+
+    session
+        .sql("CREATE DATABASE IF NOT EXISTS " + databaseConfig.database)
+        .execute()
+        .catch((err) => {
+            console.log(err);
+        })
+
+        .then(() => {
+            return session
+            .sql(
+                "CREATE TABLE IF NOT EXISTS " +
+                        databaseConfig.database +
+                        "." +
+                        databaseConfig.table +
+                        " (_id SERIAL, name VARCHAR(30), numberOf INT)"
+                )
+                .execute()
+                .catch((err) => {
+                    console.log(err);
+                });
+        });
+
+    const databaseTable = session
+        .getSchema(databaseConfig.database)
+        .getTable(databaseConfig.table);
+
+    databaseTable.insert(["name", "numberOf"]).values(["cards", 3]).execute();
+    databaseTable.insert(["name", "numberOf"]).values(["asides", 3]).execute();
+    
+    databaseTable
+        .select()
+        .execute()
+        .then((response) => {
+            console.log(response.toArray());
+        });
+    // return
+});
+
+
+// [ ] web server
 // var check = net.createServer();
 // check.listen(port, hostname, () => {
 //   do {
@@ -61,6 +188,7 @@ var db = mysql
 //   }) == 'no');
 // });
 
+// [x] web server -------------------------------------------
 var server = http.createServer(async (req, res) => {
     let filePath = "index.html";
     filePath = "." + req.url;
@@ -79,8 +207,8 @@ var server = http.createServer(async (req, res) => {
         case ".js":
             contentT = "text/javascript";
             break;
-        default:
-            break;
+            default:
+                break;
     }
     console.log(filePath);
     console.log(path.extname(filePath));
@@ -133,7 +261,7 @@ server.listen(port, hostname, () => {
     } while (
         server.on("error", (e) => {
             if (e.code == "EADDRINUSE" || e) {
-                readline.question(
+                processInput.question(
                     "Port is busy! do you want to try " +
                         (port + 1).toString() +
                         " port? (yes/no)\t> ",
@@ -158,19 +286,37 @@ server.listen(port, hostname, () => {
     );
 });
 
+// [ ] mongodb ------------------------------------------
+// var MongoClient = require('mongodb').MongoClient;
+// const mongoose = require('mongoose');
+// var uri = "mongodb://localhost:27017/mydb?directConnection=true&serverSelectionTimeoutMS=2000";
+// var uri = process.env.MONGO_URI;
+// var client = new MongoClient(uri);
+
+// [ ] mysql connector module ---------------------------
+// const mysql = require('mysql');
+// const mysql = require("mysql2");
+// var db = mysql.createConnection({
+//   host: "localhost",
+//   port: "3306",
+//   user: "root",
+//   password: "n123N-password",
+//   database: "mydb",
+// });
+
 // server.once("error", (err) => {
 //   if (err.code == "EADDRINUSE") {
-//     readline.question(
+//     processInput.question(
 //       "Port is busy! do you want to try " +
 //         (port + 1).toString() +
 //         " port? (yes/no)\t> ",
 //       (q) => {
 //         if (q == "yes") {
-//           server.close();
+    //           server.close();
 //           port++;
 //           server.listen(port, hostname, () => {
 //             console.log(
-//               "Server running at http://" +
+    //               "Server running at http://" +
 //                 hostname.toString() +
 //                 ":" +
 //                 port.toString() +
@@ -228,7 +374,7 @@ server.listen(port, hostname, () => {
 //   .then(server.listen(port, hostname, () => {
 //     console.log('Server running at http://' + hostname.toString() + ':' + port.toString() + '/');
 //     // let name = '';
-//     // readline.question('hi?\t> ', name => {
+//     // processInput.question('hi?\t> ', name => {
 //     //   console.log('hey ' + name);
 //     // });
 //   }));
@@ -244,7 +390,7 @@ server.listen(port, hostname, () => {
 //     console.log(dbo);
 
 //     // let name = '';
-//     // readline.question('hi?\t> ', name => {
+//     // processInput.question('hi?\t> ', name => {
 //       //   console.log('hey ' + name);
 //       // });
 //       db.query("CREATE DATABASE mydb", (err, result )=> {
