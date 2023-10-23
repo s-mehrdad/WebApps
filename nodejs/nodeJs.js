@@ -5,7 +5,7 @@
 /// created by Mehrdad Soleimanimajd on 11.05.2023
 /// </summary>
 /// <created>ʆϒʅ, 11.05.2023</created>
-/// <changed>ʆϒʅ, 19.10.2023</changed>
+/// <changed>ʆϒʅ, 23.10.2023</changed>
 // ===========================================================================
 
 var http = require("node:http");
@@ -107,7 +107,7 @@ var db = mysql
                         })
 
                         .then((response) => {
-                            console.log(response.toArray());
+                            console.log(response.fetchAll());
                         })
                         // .then(() => {
                         //     njSchema.dropCollection(schemaConfig.collection);
@@ -165,7 +165,7 @@ var njDatabase = mysql.getSession(connectionConfig).then((session) => {
         .select()
         .execute()
         .then((response) => {
-            console.log(response.toArray());
+            console.log(response.fetchOne());
         });
     // return
 });
