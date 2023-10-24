@@ -1,5 +1,5 @@
 # Introduction 
-Web applications build on HTML, CSS, JS, React.
+Web applications build on HTML, CSS, JS, ReactJS, NodeJS, NextJS.
 
 <table>
 <tr>
