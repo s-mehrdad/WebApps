@@ -5,7 +5,7 @@
 /// created by Mehrdad Soleimanimajd on 11.05.2023
 /// </summary>
 /// <created>ʆϒʅ, 11.05.2023</created>
-/// <changed>ʆϒʅ, 23.10.2023</changed>
+/// <changed>ʆϒʅ, 17.11.2023</changed>
 // ===========================================================================
 
 var http = require("node:http");
@@ -122,7 +122,7 @@ var db = mysql
             });
     });
 
-// sql, database and table --------------------------------------------    
+// sql, database and table --------------------------------------------
 const databaseConfig = {
     database: "nodeJsDatabase",
     table: "nodeJsTable",
@@ -141,8 +141,8 @@ var njDatabase = mysql.getSession(connectionConfig).then((session) => {
 
         .then(() => {
             return session
-            .sql(
-                "CREATE TABLE IF NOT EXISTS " +
+                .sql(
+                    "CREATE TABLE IF NOT EXISTS " +
                         databaseConfig.database +
                         "." +
                         databaseConfig.table +
@@ -160,7 +160,7 @@ var njDatabase = mysql.getSession(connectionConfig).then((session) => {
 
     databaseTable.insert(["name", "numberOf"]).values(["cards", 3]).execute();
     databaseTable.insert(["name", "numberOf"]).values(["asides", 3]).execute();
-    
+
     databaseTable
         .select()
         .execute()
@@ -169,7 +169,6 @@ var njDatabase = mysql.getSession(connectionConfig).then((session) => {
         });
     // return
 });
-
 
 // [ ] web server
 // var check = net.createServer();
@@ -207,8 +206,8 @@ var server = http.createServer(async (req, res) => {
         case ".js":
             contentT = "text/javascript";
             break;
-            default:
-                break;
+        default:
+            break;
     }
     console.log(filePath);
     console.log(path.extname(filePath));
@@ -312,11 +311,11 @@ server.listen(port, hostname, () => {
 //         " port? (yes/no)\t> ",
 //       (q) => {
 //         if (q == "yes") {
-    //           server.close();
+//           server.close();
 //           port++;
 //           server.listen(port, hostname, () => {
 //             console.log(
-    //               "Server running at http://" +
+//               "Server running at http://" +
 //                 hostname.toString() +
 //                 ":" +
 //                 port.toString() +
