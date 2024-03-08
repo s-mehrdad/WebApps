@@ -24,11 +24,11 @@ Web application is compilable through React engine.
 <table>
 <tr>
 <td><b>run:</b></td>
-<td>npm start</td>
+<td>npm run dev</td>
 </tr>
 <tr>
 <td><b>test:</b></td>
-<td>npm test</td>
+<td>npm run test</td>
 </tr>
 </table>
 
@@ -48,15 +48,14 @@ I appreciate any contribution to the project.
 
 # References
 <table>
-
 <tr>
 <td><a href="https://react.dev/learn">React</a></td>
+<td><a href="https://nextjs.org/docs">Next</a></td>
 <td><a href="https://www.taniarascia.com/getting-started-with-react/">React Tutorial</a></td>
 <td><a href="https://www.telerik.com/blogs/beginners-guide-loops-in-react-jsx">React Loops</a></td>
 <td><a href="https://v5.reactrouter.com/web/guides/philosophy">React Router</a></td>
 <td><a href="https://stackoverflow.com/">Stackoverflow</a></td>
 </tr>
-
 </table>
 
 # Copyright Notice
